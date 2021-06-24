@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/day01_Object/day01_Object.iml" filepath="$PROJECT_DIR$/day01_Object/day01_Object.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day02_Collection/day02_Collection.iml" filepath="$PROJECT_DIR$/day02_Collection/day02_Collection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day03_List&amp;Set/day03_List&amp;Set.iml" filepath="$PROJECT_DIR$/day03_List&amp;Set/day03_List&amp;Set.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day04_Map/day04_Map.iml" filepath="$PROJECT_DIR$/day04_Map/day04_Map.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day05_Exception/day05_Exception.iml" filepath="$PROJECT_DIR$/day05_Exception/day05_Exception.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day06_Thread/day06_Thread.iml" filepath="$PROJECT_DIR$/day06_Thread/day06_Thread.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day07_File/day07_File.iml" filepath="$PROJECT_DIR$/day07_File/day07_File.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day08_IO/day08_IO.iml" filepath="$PROJECT_DIR$/day08_IO/day08_IO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day09_BufferIO/day09_BufferIO.iml" filepath="$PROJECT_DIR$/day09_BufferIO/day09_BufferIO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day10_NetWorkProgramming/day10_NetWorkProgramming.iml" filepath="$PROJECT_DIR$/day10_NetWorkProgramming/day10_NetWorkProgramming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day11_FunctionInterface/day11_FunctionInterface.iml" filepath="$PROJECT_DIR$/day11_FunctionInterface/day11_FunctionInterface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day12_StreamIO/day12_StreamIO.iml" filepath="$PROJECT_DIR$/day12_StreamIO/day12_StreamIO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/testrepo.iml" filepath="$PROJECT_DIR$/.idea/testrepo.iml" />
+    </modules>
+  </component>
+</project>
