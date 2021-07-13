@@ -63,5 +63,6 @@ class Test{
         MyGeneric.method2(1);
         MyGeneric.method2("LHH");
 
+
     }
 }

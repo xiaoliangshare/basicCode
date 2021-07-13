@@ -1,3 +1,0 @@
-filename=a.txt
-length=209385038
-location=D:\a.txt
