@@ -1,6 +1,8 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 /**
  * @description:
@@ -50,7 +52,7 @@ public class Value<T> {
     //这里你也可以不带泛型，但是不规范，可读性不高，就是如果我明知道需要返回的是一个user集合，我应该显示说明集合的类型
     //之所以使用泛型就是为了在编译期间就约束
     /**
-     *  WebResponse<List<User>>中<>中的东西就是为了提高可读性
+     *  WebResponse<List<User>>中的<>就是为了提高可读性
      */
     public static WebResponse<List<User>> method1(){
         //模拟findById()查询一个用户
@@ -65,6 +67,15 @@ public class Value<T> {
 
         WebResponse webResponse = method1();
         System.out.println(webResponse.getData());
+
+        //以后都用这中方式获取对象
+        User user = EntityFactory.getEntity(User::new);
+
+
+
+        //下面这种方式做了解就行
+        //List<User> users = new ArrayList<User>(Arrays.asList(user));
+        //users.forEach(EntityFactory::method);
 
     }
 }

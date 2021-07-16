@@ -1,7 +1,7 @@
 import junit.framework.TestCase;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -22,5 +22,9 @@ public class ValueTest extends TestCase {
         System.out.println(value1);
     }
 
-
+    @Test
+    public void testLocalDate(){
+        LocalDate now = LocalDate.now();
+        System.out.println(now);
+    }
 }

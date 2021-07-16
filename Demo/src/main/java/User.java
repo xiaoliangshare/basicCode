@@ -12,12 +12,18 @@ public class User implements Serializable {
     private String username;
     private int age;
 
+    public User(){}
     @Override
     public String toString() {
         return "User{" +
                 "username='" + username + '\'' +
                 ", age=" + age +
                 '}';
+    }
+
+    public User(String username, int age) {
+        this.username = username;
+        this.age = age;
     }
 
     public String getUsername() {
