@@ -8,9 +8,9 @@ import java.io.Serializable;
  * @time: 10:00 上午
  * Copyright (C) 2021 Meituan All rights reserved
  */
-public class User implements Serializable {
+public class User implements Serializable, Comparable<User> {
     private String username;
-    private int age;
+    private Integer age;
 
     public User(){}
     @Override
@@ -21,7 +21,7 @@ public class User implements Serializable {
                 '}';
     }
 
-    public User(String username, int age) {
+    public User(String username, Integer age) {
         this.username = username;
         this.age = age;
     }
@@ -34,11 +34,16 @@ public class User implements Serializable {
         this.username = username;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public int compareTo(User o) {
+        return this.getAge()-o.getAge();
     }
 }
