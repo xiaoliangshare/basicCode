@@ -1,4 +1,6 @@
-import java.io.PrintStream;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 
 /**
@@ -8,11 +10,13 @@ import java.io.Serializable;
  * @time: 10:00 上午
  * Copyright (C) 2021 Meituan All rights reserved
  */
+@Data
+@NoArgsConstructor
 public class User implements Serializable, Comparable<User> {
     private String username;
     private Integer age;
 
-    public User(){}
+    //public User(){}
     @Override
     public String toString() {
         return "User{" +

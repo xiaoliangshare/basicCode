@@ -14,7 +14,7 @@ public class MySystem {
             System.out.println(i);
         }
         long end=System.currentTimeMillis();
-        System.out.println("打印0-9999所耗的时间为(毫秒)："+(end-start));
+        System.out.println("打印0-9999所耗的时间为："+(end-start)+"(毫秒)");
         copyArray();
     }
 
@@ -28,7 +28,7 @@ public class MySystem {
             System.out.print(i+" ");
         }
         System.out.println();
-        int[] newArr = Arrays.copyOf(srcArr, 15);//完全拷贝并缩（扩）容，当然是从0位置开始拷贝
+        int[] newArr = Arrays.copyOf(srcArr, 10);//完全拷贝并缩（扩）容，当然是从0位置开始拷贝
         for(int i: newArr){
             System.out.print(i+" ");
         }

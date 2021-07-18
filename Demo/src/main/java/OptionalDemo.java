@@ -1,7 +1,5 @@
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
@@ -39,20 +37,20 @@ public class OptionalDemo {
 
         Optional.ofNullable("tom").ifPresent(System.out::println);
         Optional.ofNullable("tom").ifPresent(
-                s->{
-                    System.out.println(s+"lhh");
-                    System.out.println(s+"lhh2");
-                    System.out.println(s+"lhh3");
-                    System.out.println(s+"lhh4");
-                    System.out.println(s+"lhh5");
+                s -> {
+                    System.out.println(s + "lhh");
+                    System.out.println(s + "lhh2");
+                    System.out.println(s + "lhh3");
+                    System.out.println(s + "lhh4");
+                    System.out.println(s + "lhh5");
                 }
         );
-        Optional.ofNullable("tom").orElseThrow(()->new RuntimeException("wrong"));
+        Optional.ofNullable("tom").orElseThrow(() -> new RuntimeException("wrong"));
 
 
         List<User> users = Arrays.asList(
                 new User("zhangsan", 10),
-                new User("zhangsan",null),
+                new User("zhangsan", null),
                 new User("zhangsan2", 30),
                 new User("lisi", 20),
                 new User("wangwu", 30),
@@ -65,31 +63,59 @@ public class OptionalDemo {
                 .filter(user -> user.getUsername().equals("zhangsan"))
                 //.map()
                 .forEach(user -> {
-                    Integer integer = Optional.ofNullable(user)//这里可以不用写user.getAge()
-                            .map(User::getAge)//等价于.map(u->u.getAge())
-                            .map(age -> age + 1)
-                            .orElseGet(() -> {
-                                return 20;
-                            });
-                    System.out.println(integer);
-                }
-        );
+                            Integer integer = Optional.ofNullable(user)//这里可以不用写user.getAge()
+                                    .map(User::getAge)//等价于.map(u->u.getAge())
+                                    .map(age -> age + 1)
+                                    .orElseGet(() -> {
+                                        return 20;
+                                    });
+                            System.out.println(integer);
+                        }
+                );
+
+
+//        Optional.ofNullable(receipt.getExtraInfo()).ifPresent(
+//                extinfo->warehouseOut.setExtraInfo(JSON.toJSONString(extinfo))
+//        );
+
+        initUser();
+
     }
 
     private static String show() {
         System.out.println("Optional判断的实例不管是否为null都会执行，但是它的返回值只有当null的时候才起作用");
         return "hello";
     }
+    public static void initUser(){
+        final User user = new User();//final意味着引用不可变罢了,但是可以修改这个对象的值
+        user.setAge(12);
+
+        //User user1 = new User("zz", 21);
+        //user=user1;
+
+        String name = "zyy";
+        Optional.ofNullable(name).ifPresent(
+                n ->{
+                    user.setAge(13);
+                    user.setUsername(n);
+                }
+        );
+        modifyUserAge(user);
+        System.out.println(user);
+    }
+    public static void modifyUserAge(User user){
+        //user=new User();
+        user.setAge(100);
+    }
 }
 
 /**
- *
  * if(user!=null){
- *     dosomething(user);
+ * dosomething(user);
  * }
- *
- *  Optional.ofNullable(user)
- *     .ifPresent(u->{
- *         dosomething(u);
+ * <p>
+ * Optional.ofNullable(user)
+ * .ifPresent(u->{
+ * dosomething(u);
  * });
  */

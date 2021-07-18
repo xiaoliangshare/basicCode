@@ -22,8 +22,6 @@ public class xintexing<F,T> {
     public static void main(String[] args) {
         xintexing<String, Integer> xintexing = new xintexing<>();
         xintexing.convertMethod(Integer::new);
-
-
     }
 
 }
