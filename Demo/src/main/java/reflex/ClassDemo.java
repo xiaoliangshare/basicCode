@@ -1,8 +1,10 @@
 package reflex;
+import java.io.InputStream;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Date;
+import java.util.Properties;
 
 /**
  * @description:
@@ -91,5 +93,27 @@ public class ClassDemo {
 /**
  * 注意，没带getDeclaredxxx()都只能获取public类型的字段，构造器，方法
  */
+
+        Class c=Class.forName("reflex.Person");
+        Class c1=Person.class;
+        Class c3=person.getClass();
+
+
+        Field[] fields1 = c.getFields();
+        Field name1 = c.getDeclaredField("name");
+        name1.set(person,"zyy");
+        name1.get(person);
+
+        Method eat2 = c.getMethod("eat",String.class);
+        eat2.invoke(person,"汉堡");
+
+        Properties properties = new Properties();
+        ClassLoader classLoader = person.getClass().getClassLoader();
+        InputStream is = classLoader.getResourceAsStream("classpath:app.properties");
+        properties.load(is);
+        String property = properties.getProperty("userService");
+        Class.forName(property);
+
+
     }
 }

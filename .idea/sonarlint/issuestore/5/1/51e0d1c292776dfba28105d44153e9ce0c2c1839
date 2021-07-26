@@ -1,0 +1,11 @@
+
+H
+java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ
+E
+java:S1128"*Remove this unused import 'java.util.Map'.(¼è½Òþÿÿÿÿ
+S
+java:S1128"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ
+W
+java:S3066"<Lower the visibility of this setter or remove it altogether.(¹ØËÁÿÿÿÿÿ
+R
+java:S3066$"<Lower the visibility of this setter or remove it altogether.(Ò’Š¯

@@ -1,0 +1,8 @@
+
+N	java:S106"9Replace this use of System.out or System.err by a logger.(¤™ï×
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ö½ÍÞùÿÿÿÿ
+Q
+java:S1874"6Remove this use of "toLocaleString"; it is deprecated.(ö½ÍÞùÿÿÿÿ
+S	java:S106&"9Replace this use of System.out or System.err by a logger.(áÜÙèøÿÿÿÿ
+N	java:S1065"9Replace this use of System.out or System.err by a logger.(ñ£ü«
+S	java:S106<"9Replace this use of System.out or System.err by a logger.(Ì÷íúÿÿÿÿ

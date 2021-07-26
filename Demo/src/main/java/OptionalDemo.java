@@ -111,11 +111,10 @@ public class OptionalDemo {
 
 /**
  * if(user!=null){
- * dosomething(user);
+ *    dosomething(user);
  * }
- * <p>
- * Optional.ofNullable(user)
- * .ifPresent(u->{
- * dosomething(u);
+ *
+ * Optional.ofNullable(user).ifPresent(u->{
+ *    dosomething(u);
  * });
  */
