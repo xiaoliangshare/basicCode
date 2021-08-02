@@ -12,7 +12,6 @@ package Synchronized;
 */
 public class TicketRunnableFunction implements Runnable {
     private static int ticket = 100;
-    Object obj=new Object(); //这里必须在外面创建，否则每个线程创建一个，对象就不唯一了
 
     //run()就是卖票
     @Override

@@ -3,6 +3,7 @@ package ThreadPool;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 /*
    线程池：在JDK 1.5之后提出的 java.util.concurrent.Executors线程池工厂类，用来生产线程池
@@ -30,7 +31,8 @@ public class ThreadPool {
 
         //3、提交Runnable接口子类对象,开启线程执行run()。(take task)
              //线程池会一直开启，使用完了线程，会自动把线程归还给线程池，线程可以继续执行
-        es.submit(run);
+        Future<?> submit = es.submit(run);
+        System.out.println(submit);//Future接口：用来记录线程任务执行完毕后产生的结果。线程池创建与使用。
         es.submit(new RunnableImpl());
         es.submit(new RunnableImpl());
 

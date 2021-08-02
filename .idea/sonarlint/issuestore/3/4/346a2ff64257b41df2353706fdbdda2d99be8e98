@@ -1,0 +1,15 @@
+
+=
+java:S2189""Add an end condition to this loop.(˜ïˆÿÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ö„İùÿÿÿÿ
+C
+java:S1604"(Make this anonymous inner class a lambda(Ã®­Šùÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ãòê‹
+t
+java:S2142"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€
+S	java:S106#"9Replace this use of System.out or System.err by a logger.(ƒÃ÷Ñùÿÿÿÿ
+N	java:S106$"9Replace this use of System.out or System.err by a logger.(¨³Ë
+Q	java:S125/"<This block of commented-out lines of code should be removed.(©Æ˜¢
+t
+java:S21424"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€
+S	java:S1069"9Replace this use of System.out or System.err by a logger.(òœ‚úÿÿÿÿ

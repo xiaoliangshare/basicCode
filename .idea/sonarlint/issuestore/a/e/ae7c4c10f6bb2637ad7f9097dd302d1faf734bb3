@@ -1,0 +1,58 @@
+
+J
+java:S3740"/Provide the parametrized type for this generic.(ÜÈ¢¨ÿÿÿÿÿ
+J
+java:S3740D"/Provide the parametrized type for this generic.(“ÓíËúÿÿÿÿ
+J
+java:S3740G"/Provide the parametrized type for this generic.(âå±œúÿÿÿÿ
+J
+java:S3740a"/Provide the parametrized type for this generic.(‰äÜõøÿÿÿÿ
+J
+java:S3740b"/Provide the parametrized type for this generic.(ÃÇ¥ÿÿÿÿÿ
+J
+java:S3740c"/Provide the parametrized type for this generic.(›ÀÍúÿÿÿÿ
+V
+java:S1854K";Remove this useless assignment to local variable "person1".(¦®šûùÿÿÿÿ
+X
+java:S1854:"BRemove this useless assignment to local variable "declaredFields".(»Ï®
+T
+java:S18545"9Remove this useless assignment to local variable "name1".(ëúêÃøÿÿÿÿ
+V
+java:S1854f";Remove this useless assignment to local variable "fields1".(›ª†îøÿÿÿÿ
+Q
+java:S1854c"6Remove this useless assignment to local variable "c3".(›ÀÍúÿÿÿÿ
+Q
+java:S1854b"6Remove this useless assignment to local variable "c1".(ÃÇ¥ÿÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ÓŞñüÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ğ›Ô¹
+S	java:S106"9Replace this use of System.out or System.err by a logger.(İşüÿÿÿÿ
+S	java:S106!"9Replace this use of System.out or System.err by a logger.(øƒÄ¦üÿÿÿÿ
+S	java:S106""9Replace this use of System.out or System.err by a logger.(…»‡Âùÿÿÿÿ
+N	java:S1060"9Replace this use of System.out or System.err by a logger.(•ğüÙ
+S	java:S1061"9Replace this use of System.out or System.err by a logger.(äîÓÕşÿÿÿÿ
+V	java:S1256"<This block of commented-out lines of code should be removed.(”Ï°±ÿÿÿÿÿ
+N	java:S106<"9Replace this use of System.out or System.err by a logger.(«‹Îõ
+B
+java:S3011>",This accessibility update should be removed.(ÿöÁ
+G
+java:S3011?",This accessibility bypass should be removed.(‘Ÿª°ıÿÿÿÿ
+N	java:S106A"9Replace this use of System.out or System.err by a logger.(Ú“Üİ
+M	java:S106F"9Replace this use of System.out or System.err by a logger.(ïõõ	
+N	java:S106I"9Replace this use of System.out or System.err by a logger.(ˆşÅß
+Q	java:S125P"<This block of commented-out lines of code should be removed.(¸ÿ×”
+Q	java:S125W"<This block of commented-out lines of code should be removed.( º›ı
+N	java:S106Y"9Replace this use of System.out or System.err by a logger.(£·®
+B
+java:S3011h",This accessibility bypass should be removed.(â·ëŞ
+E
+java:S14815"*Remove this unused "name1" local variable.(ëúêÃøÿÿÿÿ
+I
+java:S1481:"3Remove this unused "declaredFields" local variable.(»Ï®
+G
+java:S1481K",Remove this unused "person1" local variable.(¦®šûùÿÿÿÿ
+B
+java:S1481b"'Remove this unused "c1" local variable.(ÃÇ¥ÿÿÿÿÿ
+B
+java:S1481c"'Remove this unused "c3" local variable.(›ÀÍúÿÿÿÿ
+G
+java:S1481f",Remove this unused "fields1" local variable.(›ª†îøÿÿÿÿ

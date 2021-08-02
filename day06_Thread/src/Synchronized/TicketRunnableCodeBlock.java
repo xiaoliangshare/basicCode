@@ -9,22 +9,20 @@ package Synchronized;
 */
 public class TicketRunnableCodeBlock implements Runnable {
     private int ticket = 100;
-    Object obj=new Object();//这里必须在外面创建，否则每个线程创建一个，对象就不唯一了
+    Object obj = new Object();//这里必须在外面创建，否则每个线程创建一个，对象就不唯一了
 
     //run()就是卖票
     @Override
     public void run() {
         while (true) {
-            synchronized (obj){
+            synchronized (obj) {
                 if (ticket > 0) {
-                    //提高安全问题出现的概率，让程序睡眠
-                /*try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }*/
-                    System.out.println(Thread.currentThread().getName() + "正在卖第" + ticket + "张票");
-                    ticket--;
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println(Thread.currentThread().getName() + "开始卖第" + ticket-- + "张票");
                 }
             }
         }

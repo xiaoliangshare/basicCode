@@ -55,7 +55,7 @@ public class WaitAndNotify {
                     //保证等待和唤醒只有一个在执行,需要使用同步技术
                     synchronized (obj){
                         System.out.println("老板5秒之后做好包子，告知顾客可以吃包子了");
-                        obj.notify();
+                        obj.notifyAll();
                     }
                 }
             }

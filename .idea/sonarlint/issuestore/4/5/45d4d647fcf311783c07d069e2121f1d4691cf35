@@ -1,0 +1,39 @@
+
+g
+java:S1192"LDefine a constant instead of duplicating this literal "Full Name: " 3 times.(ûœ°ûÿÿÿÿ
+d
+java:S11924"IDefine a constant instead of duplicating this literal "zhangsan" 3 times.(œ¤ÿÿÿÿÿ
+S
+java:S1128"8Remove this unused import 'java.util.function.Consumer'.(Ì†ƒÔùÿÿÿÿ
+O
+java:S1128"9Remove this unused import 'java.util.function.Predicate'.(ïÍ–¶
+N
+java:S1128"8Remove this unused import 'java.util.function.Supplier'.(†ïÿ‘
+N	java:S106"9Replace this use of System.out or System.err by a logger.(Æ‡…³
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ûœ°ûÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(Èí¡àúÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(æ²²Îüÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ìÓ¬Óÿÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(¬À”ÿÿÿÿÿ
+N	java:S106 "9Replace this use of System.out or System.err by a logger.(ÏëÆş
+S	java:S106!"9Replace this use of System.out or System.err by a logger.(Ì­şÿşÿÿÿÿ
+S	java:S106""9Replace this use of System.out or System.err by a logger.(î®—îûÿÿÿÿ
+S	java:S106#"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ
+M	java:S106&"9Replace this use of System.out or System.err by a logger.(ªØì'
+S	java:S106)"9Replace this use of System.out or System.err by a logger.(”ÆêÎıÿÿÿÿ
+S	java:S106*"9Replace this use of System.out or System.err by a logger.(—õ»êùÿÿÿÿ
+S	java:S106+"9Replace this use of System.out or System.err by a logger.(ÖŸÁıÿÿÿÿ
+S	java:S106,"9Replace this use of System.out or System.err by a logger.(üƒó½úÿÿÿÿ
+N	java:S106-"9Replace this use of System.out or System.err by a logger.(»ÚÁğ
+E
+java:S22010"/The return value of "orElseThrow" must be used.(¿˜ä´
+i
+java:S1602E"SRemove useless curly braces around statement and then remove useless return keyword(×Ôññ
+N	java:S106H"9Replace this use of System.out or System.err by a logger.(«òˆì
+V	java:S125O"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ
+N	java:S106V"9Replace this use of System.out or System.err by a logger.(åğ¼‚
+Q	java:S125]"<This block of commented-out lines of code should be removed.(¼‘É¥
+N	java:S106h"9Replace this use of System.out or System.err by a logger.(Ø¼¢ƒ
+Q	java:S125k"<This block of commented-out lines of code should be removed.(Ğ‹Úõ
+D
+java:S1144U")Remove this unused private "show" method.(Â¶îãşÿÿÿÿ

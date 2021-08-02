@@ -24,7 +24,7 @@ public class ClassDemo {
         //2、类名.class：通过类名的属性class获取
         Class<Person> pClass2 = Person.class;
         System.out.println(pClass2);
-        //3、对象.getClass():getClass()方法在Object类中定义着
+        //3、对象.getClass()，getClass()方法在Object类中定义着
         Person person = new Person();
         Class<? extends Person> pClass3 = person.getClass();
         System.out.println(pClass3);
@@ -50,7 +50,7 @@ public class ClassDemo {
         }
 
         //不能用getField()获取name属性，因为name属性是private的,getField()只能获取public的属性
-        //Field name1 = pClass.getField("name");
+        Field name1 = pClass.getField("name");//报NoSuchFieldException
         //System.out.println("name1"+name1);
 
 
@@ -100,9 +100,9 @@ public class ClassDemo {
 
 
         Field[] fields1 = c.getFields();
-        Field name1 = c.getDeclaredField("name");
-        name1.set(person,"zyy");
-        name1.get(person);
+        Field name2 = c.getDeclaredField("name");
+        name2.set(person,"zyy");
+        name2.get(person);
 
         Method eat2 = c.getMethod("eat",String.class);
         eat2.invoke(person,"汉堡");

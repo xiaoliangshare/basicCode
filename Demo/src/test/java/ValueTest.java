@@ -1,6 +1,7 @@
 import junit.framework.TestCase;
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -24,7 +25,10 @@ public class ValueTest extends TestCase {
 
     @Test
     public void testLocalDate(){
-        LocalDate now = LocalDate.now();
-        System.out.println(now);
+//        LocalDate now = LocalDate.now();
+//        System.out.println(now);
+        BigDecimal bigDecimal = new BigDecimal(1);
+        System.out.println(bigDecimal.multiply(new BigDecimal(-1)));
+
     }
 }

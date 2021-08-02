@@ -1,5 +1,7 @@
 package ThreeWaysToCreateThread;
 
+import java.util.List;
+
 /*
     自定义线程类：继承Thread类, 在子类中可以直接使用这些方法
             public String getName() :获取当前线程名称。

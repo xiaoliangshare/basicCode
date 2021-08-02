@@ -39,21 +39,21 @@ public class AssertDemo {
     public void testStreamMap() {
         String str = "lhh";
 
-        List<String> strings = Arrays.asList("g", "g","g");//假设我选了三个库存组织，结果有一个为空
+        List<String> strings = Arrays.asList("g", "g", "g");//假设我选了三个库存组织，结果有一个为空
 
         Set<String> set = strings.stream().map(
                 s -> {
-                    String period=getPeriod(s);
-                    if (Objects.isNull(period)){
+                    String period = getPeriod(s);
+                    if (Objects.isNull(period)) {
                         throw new RuntimeException("库存组织期间编码不一致");
                     }
                     return period;
                 }
         ).collect(Collectors.toSet());
-        if (set.size()>1)
+        if (set.size() > 1)
             throw new RuntimeException("库存组织期间编码不一致");
         Object o = set.toArray()[0];
-        String s =set.toArray()[0].toString();
+        String s = set.toArray()[0].toString();
         System.out.println(s);
 
 
@@ -68,29 +68,56 @@ public class AssertDemo {
     }
 
     @Test
-    public void testTryCatch(){
-        int i=5;
+    public void testTryCatch() {
+        int i = 5;
         try {
             i--;
-            System.out.println("i:"+i);
-        }catch (Exception e){
+            System.out.println("i:" + i);
+        } catch (Exception e) {
             //log.error("msg",e);
             e.printStackTrace();
             System.exit(1);
-        }finally {
+        } finally {
             add(i);
             System.out.println("finally执行了");
         }
     }
-    private int add(int a){
-        return a+1;
+
+    @Test
+    public void testgetLegalInvOrgCodes() {
+        List<String> invOrgCodes = new ArrayList<>(Arrays.asList("a","b"));
+        List<String> legalInvOrgCodes = getLegalInvOrgCodes(invOrgCodes);
+        System.out.println(legalInvOrgCodes);
     }
+
+    private List<String> getLegalInvOrgCodes(List<String> invOrgCodes) {
+        List<String> accessedInvOrgCodeList = Arrays.asList("a", "b", "c");
+        if (accessedInvOrgCodeList.isEmpty() || accessedInvOrgCodeList == null) {
+            throw new RuntimeException("无库存组织数据权限!");
+        }
+        if (invOrgCodes == null || invOrgCodes.isEmpty()) {
+            invOrgCodes = accessedInvOrgCodeList;
+        } else {
+            boolean outAccess = invOrgCodes.stream().anyMatch(code -> !accessedInvOrgCodeList.contains(code));
+            if (outAccess) {
+                throw new RuntimeException("存在库存组织越权行为!");
+            }
+        } //获取用户传过来的库存组织(合法)
+        return invOrgCodes;
+    }
+
+    private int add(int a) {
+        return a + 1;
+    }
+
     private String getPeriod(String s) {
         return s;
     }
 }
 /**
  * 最终结论：任何执行try 或者catch中的return语句之前，都会先执行finally语句，如果finally存在的话。
- *         如果finally中有return语句，那么程序就return了，所以finally中的return是一定会被return的，
- *         编译器把finally中的return实现为一个warning。
+ * 如果finally中有return语句，那么程序就return了，所以finally中的return是一定会被return的，
+ * 编译器把finally中的return实现为一个warning。
+ * <p>
+ * 代码可以看做是程序的片段，代码也许只有一行或是几行，是完成部分任务的，程序是精心安排部署的代码的集合，完成系统的复杂的任务的。单独的代码没有任何意义，只有放在特定的程序中，被解释成计算机可以执行的程序时才有用
  */
