@@ -1,6 +1,9 @@
 import junit.framework.TestCase;
 import org.junit.Test;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.Writer;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
@@ -21,6 +24,19 @@ public class ValueTest extends TestCase {
         Value value = new Value();
         List<Integer> value1 = value.getValue(100);
         System.out.println(value1);
+    }
+
+    @Test
+    public void testTryCatch(){
+
+
+        //BufferedWriter bw=new BufferedWriter(new FileWriter());
+
+        try {
+            int i=1/0;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Test

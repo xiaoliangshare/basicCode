@@ -1,7 +1,11 @@
+import day8_1.MyAnoo;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import reflex.Person;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.Date;
 
 /**
  * @description:
@@ -49,5 +53,18 @@ public class User implements Serializable, Comparable<User> {
     @Override
     public int compareTo(User o) {
         return this.getAge()-o.getAge();
+    }
+
+    @MyAnoo
+    public void show(){
+        System.out.println("User类中的show方法执行了");
+    }
+
+    public Person getPerson(){
+        Person person = new Person();
+        person.setAge(100);
+        person.setName("lhh");
+        person.setBirthday(new Date());
+        return person;
     }
 }

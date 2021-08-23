@@ -49,10 +49,6 @@ U
 %day01_Object/src/com/hh/MySystem.java,a/0/a00007c39487df740bb5978d3e9a099dfb4059da
 <
 Demo/pom.xml,0/1/01b1d907e20dfabe7501f5e759eeb1e16a65f30c
-Q
-!Demo/src/main/java/xintexing.java,c/8/c8300f3b1143bbddb1c4d53a8c5920038721f157
-Q
-!Demo/src/main/java/Calculate.java,0/1/01a2cab14d519c2d9051a8163d6ab330940c609e
 U
 %Demo/src/main/java/ConverterImpl.java,0/3/03cdbd899d697c6c8f11b83607513834e47fd817
 U
@@ -61,12 +57,6 @@ T
 $Demo/src/main/java/TryCatchDemo.java,a/a/aafc467d1b0d3d49974ea21220e2d0e3a0fde969
 T
 $Demo/src/main/java/OptionalDemo.java,4/5/45d4d647fcf311783c07d069e2121f1d4691cf35
-L
-Demo/src/main/java/User.java,1/e/1e952390ba696d5970d9565d887a5daad2cbdfbb
-U
-%Demo/src/main/java/reflex/Person.java,e/1/e1627fe36794f8763e8e9163c139db482a99af0c
-R
-"Demo/src/main/java/StreamDemo.java,4/9/49ccf278f09d4206fbe7af5627b1dcd2152aa582
 P
  Demo/src/main/java/UserDemo.java,d/e/de936eb64e6f1fe0b65cc85dde740fc1ec56e752
 M
@@ -91,8 +81,6 @@ j
 :day06_Thread/src/ThreeWaysToCreateThread/TestMyThread.java,9/7/9718b09ebe218ce40e02b15233997d8d5acd390c
 [
 +day06_Thread/src/ThreadPool/ThreadPool.java,1/3/1314c9f015d9de6b02fbfe7b0e3b340738111aa3
-e
-5day06_Thread/src/Synchronized/TicketRunnableLock.java,0/7/07d35b5e1394fc32116f2335b6854e81f8f75079
 j
 :day06_Thread/src/Synchronized/TicketRunnableCodeBlock.java,1/8/1857d5d1b78373ca1bc7d6b4993653132e1a2b0d
 ]
@@ -101,11 +89,17 @@ a
 1day06_Thread/src/Synchronized/TicketRunnable.java,6/2/621bcf71310bb04d80c0e31bb1dd38123656ca34
 i
 9day06_Thread/src/Synchronized/TicketRunnableFunction.java,2/b/2bd8d26487a45caecc9c0d32a9fef53d07d48c85
-X
-(Demo/src/main/java/reflex/ClassDemo.java,a/e/ae7c4c10f6bb2637ad7f9097dd302d1faf734bb3
-Q
-!Demo/src/test/java/ValueTest.java,d/2/d2da913810971b35c02cdafc77aa0c1e316c23bc
 e
 5day06_Thread/src/Producer_Consumer/WaitAndNotify.java,3/4/346a2ff64257b41df2353706fdbdda2d99be8e98
 O
 Demo/src/main/java/Formula.java,c/8/c81e00a5d2cfca9cab3f1da6afecfd1a5a1405f4
+V
+&Demo/src/main/java/day8_1/MyAnno2.java,d/d/dd97526bf6f3c0e219dcc222719f7259d39fc281
+T
+$Demo/src/main/java/day8_1/Color.java,2/8/28f6f953c95ad77139b06f0a7fa3c9b442e859ce
+W
+'Demo/src/main/java/day8_1/AnnoDemo.java,f/6/f6780dbdcad061a876d638f92bfdc1bc93097e93
+Q
+!Demo/src/main/java/Calculate.java,0/1/01a2cab14d519c2d9051a8163d6ab330940c609e
+R
+"Demo/src/main/java/StreamDemo.java,4/9/49ccf278f09d4206fbe7af5627b1dcd2152aa582
