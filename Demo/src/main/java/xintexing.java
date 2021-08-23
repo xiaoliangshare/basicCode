@@ -28,6 +28,9 @@ public class xintexing<F, T> {
         list1=temp;
         System.out.println(list1);
 
+
+
+
     }
 
 }
