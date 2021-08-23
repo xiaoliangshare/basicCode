@@ -1,7 +1,5 @@
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -23,6 +21,11 @@ public class StreamDemo {
                 new User("lisi", 20),
                 new User("wangwu", 30)
         );
+
+        // 找出用户列表中年龄最大的User对象
+        User user1 = users.stream().max(Comparator.comparingInt(User::getAge)).get();
+
+        users.stream().max((o1, o2) -> o1.getAge() - o2.getAge()).get();
 
         //Lists.newArrayList();
         //list.forEach 和 list.stream().forEach()的效果是一样的
@@ -81,6 +84,9 @@ public class StreamDemo {
         System.out.println(map1);
 
 
+        //后续一般list转化为map
+        Map<String, Integer> collect = users.stream().collect(Collectors.toMap(User::getUsername, User::getAge, (key1, key2) -> key2 >= key1 ? key2 : key1));
+        System.out.println(collect);
     }
 }
 /**

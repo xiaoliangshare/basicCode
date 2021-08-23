@@ -55,8 +55,6 @@ U
 %Demo/src/test/java/xintexingTest.java,8/8/889a7c3de2ebc99f10a934343d7ccd74bd0c4737
 T
 $Demo/src/main/java/TryCatchDemo.java,a/a/aafc467d1b0d3d49974ea21220e2d0e3a0fde969
-T
-$Demo/src/main/java/OptionalDemo.java,4/5/45d4d647fcf311783c07d069e2121f1d4691cf35
 P
  Demo/src/main/java/UserDemo.java,d/e/de936eb64e6f1fe0b65cc85dde740fc1ec56e752
 M
@@ -91,8 +89,6 @@ i
 9day06_Thread/src/Synchronized/TicketRunnableFunction.java,2/b/2bd8d26487a45caecc9c0d32a9fef53d07d48c85
 e
 5day06_Thread/src/Producer_Consumer/WaitAndNotify.java,3/4/346a2ff64257b41df2353706fdbdda2d99be8e98
-O
-Demo/src/main/java/Formula.java,c/8/c81e00a5d2cfca9cab3f1da6afecfd1a5a1405f4
 V
 &Demo/src/main/java/day8_1/MyAnno2.java,d/d/dd97526bf6f3c0e219dcc222719f7259d39fc281
 T
@@ -101,5 +97,3 @@ W
 'Demo/src/main/java/day8_1/AnnoDemo.java,f/6/f6780dbdcad061a876d638f92bfdc1bc93097e93
 Q
 !Demo/src/main/java/Calculate.java,0/1/01a2cab14d519c2d9051a8163d6ab330940c609e
-R
-"Demo/src/main/java/StreamDemo.java,4/9/49ccf278f09d4206fbe7af5627b1dcd2152aa582
