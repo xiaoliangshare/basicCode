@@ -71,14 +71,10 @@ n
 >day06_Thread/src/ThreeWaysToCreateThread/InnerClassThread.java,f/8/f84302cc17a975ba1cfddd7886e39ee221e5f9af
 f
 6day06_Thread/src/ThreeWaysToCreateThread/MyThread.java,c/9/c9e4796bb3f794f8d4bbf8756d83432c8dccc1c0
-]
--day06_Thread/src/ThreadPool/RunnableImpl.java,3/f/3f4b70b57215acc68ecd084e3d993afeb424064d
 R
 "Demo/src/test/java/AssertDemo.java,a/b/abc5efd8311278af656ad3e2a2d981cea7abdbf5
 j
 :day06_Thread/src/ThreeWaysToCreateThread/TestMyThread.java,9/7/9718b09ebe218ce40e02b15233997d8d5acd390c
-[
-+day06_Thread/src/ThreadPool/ThreadPool.java,1/3/1314c9f015d9de6b02fbfe7b0e3b340738111aa3
 j
 :day06_Thread/src/Synchronized/TicketRunnableCodeBlock.java,1/8/1857d5d1b78373ca1bc7d6b4993653132e1a2b0d
 ]

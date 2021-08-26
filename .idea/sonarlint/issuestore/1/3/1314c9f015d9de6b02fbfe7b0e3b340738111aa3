@@ -1,5 +1,0 @@
-
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ƒΒ‘­ψÿÿÿÿ
-U
-java:S1128":Remove this unused import 'java.util.concurrent.Executor'.(χύ¶ϊÿÿÿÿ
-N	java:S106#"9Replace this use of System.out or System.err by a logger.(γ™ΰ
