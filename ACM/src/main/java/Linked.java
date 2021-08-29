@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @description: 定义一个单向链表
+ * @description: 单向链表
  * @author: lianghaohong
  * @date: 2021/8/29
  * @time: 4:51 下午
@@ -82,6 +82,40 @@ public class Linked {
             }
             System.out.println(list);
         }
+    }
 
+    // 方法6：删除给定值的节点,PS: 在单链表下找一个确定值的节点，必须先定一个temp节点记录当前节点，因为后续要用来判断是否为头节点
+    public void remove(int value) {
+        // 需要找到值=value的节点
+        Node p = head;
+        Node temp = null;
+        while (p != null && p.data != value) {
+            temp = p;
+            p = p.next;
+        }
+        if (p != null) { //说明找到了要删除的节点
+            if (temp == null) { //说明要删除的节点是头节点
+                head = p.next;
+            } else {
+                temp.next = p.next;
+            }
+        }
+    }
+
+    // 方法7：删除给定指针的节点, PS：对于单向链表仍然需要从头开始遍历节点，找到x的前驱节点，时间复杂度: O(n)
+    public void remove(Node x) {
+        if (x == null) return;
+        Node temp = head;
+        if (temp == null) return; //空壳头节点（空链表）直接返回
+        if (temp == x) { //说明x为头节点
+            head = temp.next;
+            return;
+        }
+        while (temp.next != null && temp.next != x) {// 否则会报空指针异常
+            temp = temp.next;
+        }
+        if (temp.next != null) { //这个判断的意义很大：说明在链表中间找到的x，否则的话整个链表都没有x
+            temp.next = x.next;
+        }
     }
 }
