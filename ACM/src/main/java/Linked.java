@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @description: 定义一个链表
+ * @description: 定义一个单向链表
  * @author: lianghaohong
  * @date: 2021/8/29
  * @time: 4:51 下午
