@@ -19,7 +19,7 @@ public class LinkedListNodeTest extends TestCase {
     public void testInsert() {
         Linked linked = new Linked();
         Linked.Node node1 = new Linked.Node(1);
-        linked.insert(Linked.head, node1);
+        linked.insert(linked.head, node1);
         System.out.println(linked);
     }
 

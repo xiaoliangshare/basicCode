@@ -13,7 +13,7 @@ import java.util.List;
 public class Linked {
 
     // 定义一个空壳头节点
-    public static Node head = null;
+    public Node head = null;
 
     public static class Node {
         public int data;
