@@ -47,8 +47,6 @@ U
 %day01_Object/src/com/hh/MyString.java,6/3/6367af6efa5a12b07bdeac662c15fd0a80c27f91
 U
 %day01_Object/src/com/hh/MySystem.java,a/0/a00007c39487df740bb5978d3e9a099dfb4059da
-<
-Demo/pom.xml,0/1/01b1d907e20dfabe7501f5e759eeb1e16a65f30c
 U
 %Demo/src/main/java/ConverterImpl.java,0/3/03cdbd899d697c6c8f11b83607513834e47fd817
 U
