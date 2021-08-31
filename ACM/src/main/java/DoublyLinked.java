@@ -25,6 +25,7 @@ public class DoublyLinked {
     // 方法1：删除指定value的节点, PS:判断双向链表的头节点和尾节点
     public void remove(int value) {
         Node temp = head;
+        if (temp == null) return;
         while (temp != null && temp.data != value) {
             temp = temp.next;
         }

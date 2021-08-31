@@ -88,8 +88,9 @@ public class Linked {
     public void remove(int value) {
         // 需要找到值=value的节点
         Node p = head;
+        if (p == null) return;
         Node temp = null;
-        while (p != null && p.data != value) {
+        while (p != null && p.data != value) { //p!=null 主要为了防止节点往后走的时候出现空指针异常
             temp = p;
             p = p.next;
         }
@@ -119,3 +120,11 @@ public class Linked {
         }
     }
 }
+/**
+ * 总结：1、对于链表操作，第一件事就是链表判空（判断是否是空壳头节点），如果为空直接return
+ *      2、对传参节点进行判空,如果为空直接return
+ *
+ * 删除头节点方式：
+ *      1、单向链表：head = head.next
+ *      2、双向链表：head = head.next;  head.prev = null; （设置后继节点，也要设置前驱节点）
+ */
