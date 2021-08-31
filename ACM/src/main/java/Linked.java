@@ -128,7 +128,7 @@ public class Linked {
      *       1、如果找到了则将该数据放到头节点，并将该数据节点从原来的位置删除；
      *       2、如果没找到，再看缓存是否满了
      *                   如果没满，直接将该数据插入到头节点
-     *                   如果满了，删除尾节点，再将
+     *                   如果满了，删除尾节点，再将x节点插入到头节点
      *
      */
     public void LRU(Node x) { //x是需要访问的节点
@@ -166,6 +166,20 @@ public class Linked {
             x.next = head;
             head = x;
         }
+    }
+
+    /**
+     *  方法8：链表反转
+     */
+    public void reverseLinked(){
+
+    }
+
+    /**
+     * 方法9：有序链表合并, medium，10%正确
+     */
+    public void combiningLinked(){
+
     }
 }
 /**
