@@ -119,6 +119,54 @@ public class Linked {
             temp.next = x.next;
         }
     }
+
+    /**
+     *  方法7：实现缓存淘汰算法---LRU（最近最少使用）
+     *  思路：维护一个单链表，链表的尾部存放最早访问的节点，最新访问的节点放在头节点，这种方式的缓存访问时间复杂度为O(n),
+     *
+     *  案例：现在访问了一个数据，先去链表中找
+     *       1、如果找到了则将该数据放到头节点，并将该数据节点从原来的位置删除；
+     *       2、如果没找到，再看缓存是否满了
+     *                   如果没满，直接将该数据插入到头节点
+     *                   如果满了，删除尾节点，再将
+     *
+     */
+    public void LRU(Node x) { //x是需要访问的节点
+        // 假设缓存容量为100
+        int maxCapacity = 100;
+        int currentCapacity = 0;
+        if (x == null) return; //判断传参节点是否为空
+        Node temp = head;
+        if (temp == null) return; //判断链表是否为空
+        if (temp == x) return;
+        // 去链表中找是否存在x节点
+        Node p = null;
+        while (temp != null && temp != x) {
+            p = temp;
+            temp = temp.next;
+        }
+        if (temp == null) { //说明链表中没有x节点
+            if (currentCapacity < maxCapacity) { // 如果容量没满直接将x节点插入到头节点
+                x.next = head;
+                head = x;
+                currentCapacity++;
+            } else { // 如果容量满了，则删除尾节点，再将x节点插入到头节点
+                p = null; //以为p此时就是尾节点
+                x.next = head;
+                head = x;
+            }
+        } else { // 说明x节点存在链表中，删除原来位置，再将x节点插入到头节点
+            // 得找到x(p)节点的前驱节点
+            Node q = head;
+            while (q.next != p) {
+                q = q.next;
+            }
+            // 删除p节点
+            q.next = p.next; //q=temp 也可以
+            x.next = head;
+            head = x;
+        }
+    }
 }
 /**
  * 总结：1、对于链表操作，第一件事就是链表判空（判断是否是空壳头节点），如果为空直接return
@@ -127,4 +175,5 @@ public class Linked {
  * 删除头节点方式：
  *      1、单向链表：head = head.next
  *      2、双向链表：head = head.next;  head.prev = null; （设置后继节点，也要设置前驱节点）
+ * 刷题过程中一般会给定头节点，但也需要判断是否为空壳头节点
  */
