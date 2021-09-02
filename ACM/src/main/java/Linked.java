@@ -2,9 +2,10 @@ import org.w3c.dom.Node;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
- * @description: 单向链表
+ * @description: 单向链表，练习阶段不用封装数据结构做
  * @author: lianghaohong
  * @date: 2021/8/29
  * @time: 4:51 下午
@@ -188,10 +189,44 @@ public class Linked {
     }
 
     /**
-     * 方法8：链表反转
+     * 方法8：链表反转1
+     *
+     * @return
      */
-    public void reverseLinked() {
+    public Node reverseLinked(Linked linked) {
+        if (linked.head == null) return null;
+        Node temp = linked.head;
+        // 创建一个新的链表（新的空壳头节点）
+        Node newHead = new Node(0);
+        while (temp != null) { //temp主要用来遍历原始链表，将遍历取出来的节点赋值给x
+            Node x = temp;
+            if (newHead == null) {
+                newHead = x;
+            } else {
+                x.next = newHead;
+                newHead = x;
+            }
+            temp = temp.next;
+        }
+        return newHead;
+    }
 
+    /**
+     * 思路2：通过栈的先进后出特性，遍历链表将节点添加进栈，然后再出栈即可
+     */
+    public Node reverseLinked2(Linked linked) {
+        if (linked.head == null) return null;
+        Stack<Node> stack = new Stack<>();
+        Node temp = linked.head;
+        while (temp != null) {
+            stack.push(temp);
+            temp = temp.next;
+        }// 至此将链表都已经添加进栈
+        List<Node> newLinked=new ArrayList<>();
+        while (!stack.isEmpty()) {
+            newLinked.add(stack.pop());
+        }
+        return newLinked.get(0);
     }
 
     /**

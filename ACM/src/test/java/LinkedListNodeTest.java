@@ -1,6 +1,7 @@
 import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
+import org.w3c.dom.Node;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -66,5 +67,22 @@ public class LinkedListNodeTest extends TestCase {
         System.out.println(linked.currentCapacity);
         linked.LRU(linked, new Linked.Node(6));
         linked.printLinked(linked);
+    }
+
+    /**
+     * 链表反转
+     */
+    @Test
+    public void testReverseLinked(){
+        Linked linked = new Linked();
+        linked.add(1);
+        linked.add(2);
+        linked.add(3);
+        linked.add(4);
+        linked.add(5);
+        Linked.Node newHead=linked.reverseLinked(linked);
+        //Linked.Node newHead=linked.reverseLinked2(linked);
+        System.out.println(newHead.data);
+
     }
 }
