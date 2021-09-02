@@ -138,10 +138,10 @@ public class Linked {
         if (x == null) return; //判断传参节点是否为空
         Node temp = head;
         if (temp == null) return; //判断链表是否为空
-        if (temp == x) return;
+        if (temp.data == x.data) return;
         // 去链表中找是否存在x节点
-        Node p = null;
-        while (temp != null && temp != x) {
+        Node p = null; //作用也类似于哨兵的作用，用来保存temp节点的前驱节点
+        while (temp != null && temp.data != x.data) {
             p = temp;
             temp = temp.next;
         }
@@ -151,18 +151,13 @@ public class Linked {
                 head = x;
                 currentCapacity++;
             } else { // 如果容量满了，则删除尾节点，再将x节点插入到头节点
-                p = null; //以为p此时就是尾节点
+                p = null; //因为p此时就是尾节点
                 x.next = head;
                 head = x;
             }
-        } else { // 说明x节点存在链表中，删除原来位置，再将x节点插入到头节点
-            // 得找到x(p)节点的前驱节点
-            Node q = head;
-            while (q.next != p) {
-                q = q.next;
-            }
-            // 删除p节点
-            q.next = p.next; //q=temp 也可以
+        } else { // 说明x节点存在链表中，删除x在原来的位置，再将x节点插入到头节点
+            // 如果x节点在链表中，则temp就是x，p就是x的前驱
+            p.next = temp.next;
             x.next = head;
             head = x;
         }

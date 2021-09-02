@@ -43,4 +43,16 @@ public class LinkedListNodeTest extends TestCase {
     @Test
     public void testFind() {
     }
+
+    @Test
+    public void testLRU(){
+        Linked linked = new Linked();
+        linked.add(1);
+        linked.add(2);
+        linked.add(3);
+        linked.add(4);
+        linked.add(5);
+        linked.LRU(new Linked.Node(4));
+        linked.printLinked(linked);
+    }
 }
