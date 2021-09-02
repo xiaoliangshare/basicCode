@@ -1,4 +1,5 @@
 import junit.framework.TestCase;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class LinkedListNodeTest extends TestCase {
     }
 
     @Test
-    public void testAdd(){
+    public void testAdd() {
         Linked linked = new Linked();
         linked.add(1);
         linked.add(2);
@@ -38,6 +39,15 @@ public class LinkedListNodeTest extends TestCase {
 
     @Test
     public void testRemove() {
+        Linked linked = new Linked();
+        linked.add(1);
+        linked.add(2);
+        linked.add(3);
+        linked.add(4);
+        linked.add(5);
+        linked.printLinked(linked);
+        linked.remove(linked, new Linked.Node(1));
+        linked.printLinked(linked);
     }
 
     @Test
@@ -45,14 +55,16 @@ public class LinkedListNodeTest extends TestCase {
     }
 
     @Test
-    public void testLRU(){
+    public void testLRU() {
         Linked linked = new Linked();
+        System.out.println(linked.currentCapacity);
         linked.add(1);
         linked.add(2);
         linked.add(3);
         linked.add(4);
         linked.add(5);
-        linked.LRU(new Linked.Node(6));
+        System.out.println(linked.currentCapacity);
+        linked.LRU(linked, new Linked.Node(6));
         linked.printLinked(linked);
     }
 }

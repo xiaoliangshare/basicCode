@@ -25,6 +25,7 @@ public class Linked {
 
         public Node(int data) {
             this.data = data;
+            this.next = null;
         }
     }
 
@@ -49,6 +50,17 @@ public class Linked {
         }
     }
 
+    public void remove(Linked linked, Node x) {
+        if (x == null) return; // 判断所删节点是否为空
+        if (linked.head == null) return;  //判断链表是否为空
+        Node temp = linked.head;
+        if (temp.data == x.data) {
+            // x即为头节点, 删除头节点的方式就是：head=head.next; 不能直接head=null
+            linked.head = null;
+        }
+
+    }
+
     //方法3：查找给定值value
     public Node find(int value) {
         Node temp = head;
@@ -66,8 +78,8 @@ public class Linked {
         }
         Node node = new Node(value);
         if (head == null) { // 如果此时头节点为null，则插入头节点
-            head = node;
             node.next = null;
+            head = node;
         } else { //如果头节点不为null
             Node temp = head;
             while (temp.next != null) {
@@ -139,9 +151,9 @@ public class Linked {
      * 如果没满，直接将该数据插入到头节点
      * 如果满了，删除尾节点，再将x节点插入到头节点
      */
-    public void LRU(Node x) { //x是需要访问的节点
+    public void LRU(Linked linked, Node x) { //x是需要访问的节点
         if (x == null) return; //判断传参节点是否为空
-        Node temp = head;
+        Node temp = linked.head;
         if (temp == null) return; //判断链表是否为空
         if (temp.data == x.data) return;  // 如果头节点的值就是要访问的x节点，则直接返回
         // 去链表中找是否存在x节点
@@ -150,13 +162,20 @@ public class Linked {
             p = temp;
             temp = temp.next;
         }
-        if (temp == null) { //说明链表中没有x节点
+        if (temp == null) { // 说明链表中没有x节点
             if (currentCapacity < maxCapacity) { // 如果容量没满直接将x节点插入到头节点
                 x.next = head;
                 head = x;
                 currentCapacity++;
             } else { // 如果容量满了，则删除尾节点，再将x节点插入到头节点
-                p = null; //因为p此时就是尾节点
+                /**
+                 *  此处不能直接这样删除为节点p，一定要有关联的删除，得先找到p的前驱节点m, 再用m.next=null
+                 */
+                Node m = linked.head;
+                while (m.next != p) {
+                    m = m.next;
+                }
+                m.next = null; //因为p此时就是尾节点
                 x.next = head;
                 head = x;
             }
