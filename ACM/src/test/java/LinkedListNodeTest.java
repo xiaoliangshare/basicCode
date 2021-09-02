@@ -52,7 +52,7 @@ public class LinkedListNodeTest extends TestCase {
         linked.add(3);
         linked.add(4);
         linked.add(5);
-        linked.LRU(new Linked.Node(4));
+        linked.LRU(new Linked.Node(6));
         linked.printLinked(linked);
     }
 }
