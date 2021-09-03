@@ -189,7 +189,7 @@ public class Linked {
     }
 
     /**
-     * 方法8：链表反转1
+     * 方法8：链表反转1（五星推荐解法）
      *
      * @return
      */
@@ -197,16 +197,19 @@ public class Linked {
         if (linked.head == null) return null;
         Node temp = linked.head;
         // 创建一个新的链表（新的空壳头节点）
-        Node newHead = new Node(0);
+        Node newHead = null;
         while (temp != null) { //temp主要用来遍历原始链表，将遍历取出来的节点赋值给x
             Node x = temp;
+            temp = temp.next; // 上面Node x=temp执行之后x和temp是一样的，对x的任何操作，temp也会跟着变，所以让temp先走,然后再操作x
             if (newHead == null) {
+                // 第一次插入的头节点其实是反转之后的尾节点
+                x.next = null;
                 newHead = x;
             } else {
+                // 一条链接语句 + 一条归位语句
                 x.next = newHead;
                 newHead = x;
             }
-            temp = temp.next;
         }
         return newHead;
     }
@@ -222,7 +225,7 @@ public class Linked {
             stack.push(temp);
             temp = temp.next;
         }// 至此将链表都已经添加进栈
-        List<Node> newLinked=new ArrayList<>();
+        List<Node> newLinked = new ArrayList<>();
         while (!stack.isEmpty()) {
             newLinked.add(stack.pop());
         }
