@@ -5,6 +5,7 @@ import org.w3c.dom.Node;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * @description:
@@ -73,16 +74,36 @@ public class LinkedListNodeTest extends TestCase {
      * 链表反转
      */
     @Test
-    public void testReverseLinked(){
+    public void testReverseLinked() {
         Linked linked = new Linked();
         linked.add(1);
         linked.add(2);
         linked.add(3);
         linked.add(4);
         linked.add(5);
-        Linked.Node newHead=linked.reverseLinked(linked);
+        Linked.Node newHead = linked.reverseLinked(linked);
         //Linked.Node newHead=linked.reverseLinked2(linked);
         System.out.println(newHead.data);
 
+    }
+
+    /**
+     * 测试两个链表相加
+     */
+    @Test
+    public void testAddTwoNumbers() {
+        Linked linked1 = new Linked();
+        linked1.add(1);
+//        linked1.add(2);
+//        linked1.add(4);
+//        linked1.add(3);
+        Linked linked2 = new Linked();
+        linked2.add(9);
+        linked2.add(9);
+//        linked2.add(6);
+//        linked2.add(4);
+
+        Linked.Node node = Linked.addTwoNumbers(linked1.head, linked2.head);
+        System.out.println(node.data);
     }
 }

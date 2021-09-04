@@ -238,6 +238,126 @@ public class Linked {
     public void combiningLinked() {
 
     }
+
+    /**
+     * 两个链表相加操作
+     *
+     * @param l1
+     * @param l2
+     * @return
+     */
+    public static Node addTwoNumbers(Node l1, Node l2) {
+        //传的应该是两个链表的头节点吧
+        /* 思路：1、先对这两个链表进行反转
+                2、对依次遍历这两个链表，
+                3、进行相加，同时设置十分位：int tendigits=0;
+        */
+        // 1、先对链表进行判空处理
+        if (l1 == null || l2 == null) return null;
+
+        // 2.1、对l1进行反转
+        Node newl1 = null;
+        Node temp1 = l1;
+        while (temp1 != null) {
+            Node x = temp1;
+            temp1 = temp1.next;
+            if (newl1 == null) {
+                x.next = null;
+                newl1 = x;
+            } else {
+                x.next = newl1;
+                newl1 = x;
+            }
+        }
+        // 2.2、对l2进行反转
+        Node newl2 = null;
+        Node temp2 = l2;
+        while (temp2 != null) {
+            Node x = temp2;
+            temp2 = temp2.next;
+            if (newl2 == null) {
+                x.next = null;
+                newl2 = x;
+            } else {
+                x.next = newl2;
+                newl2 = x;
+            }
+        }
+
+        // 3、进行进行链表相加操作,相加操作之后得往addHead前面插
+        int tendigits = 0;
+        Node i = newl1;
+        Node j = newl2;
+        Node addHead = null;
+        //int sum=0;
+        while (i != null && j != null) {
+            int sum = i.data + j.data;
+            Node x = new Node((sum + tendigits) % 10); //取个位上的数字
+            if ((sum + tendigits) >= 10) {
+                tendigits = 1; //取十分位上的数字
+            } else {
+                tendigits = 0;
+            }
+            if (addHead == null) {
+                addHead = x; //此时x.next=null
+            } else {
+                x.next = addHead;
+                addHead = x;
+            }
+            i = i.next;
+            j = j.next;
+        } // 此时只是遍历到两个链表都不为空的部分
+        if (i == null && j != null) {
+            // 遍历l2
+            while (j != null) {
+                Node x = new Node((j.data + tendigits) % 10);
+                if ((j.data + tendigits) >= 10) {
+                    tendigits = 1; //取十分位上的数字
+                } else {
+                    tendigits = 0;
+                }
+                x.next = addHead;
+                addHead = x;
+                j = j.next;
+            }
+        } else if (j == null && i != null) {
+            // 遍历l1
+            while (i != null) {
+                Node x = new Node((i.data + tendigits) % 10);
+                if ((i.data + tendigits) >= 10) {
+                    tendigits = 1; //取十分位上的数字
+                } else {
+                    tendigits = 0;
+                }
+                x.next = addHead;
+                addHead = x;
+                i = i.next;
+            }
+        }
+        // 不管那种情况执行完，还有其他
+        if (i == null && j == null) {
+            if (tendigits == 1) {
+                Node x = new Node(tendigits);
+                x.next = addHead;
+                addHead = x;
+            }
+        }
+        return addHead;
+    }
+
+    /**
+     * 对链表进行重新排序
+     * 思路：先取头节点，再取尾节点
+     *
+     * @param linked
+     */
+    public void reorderList(Linked linked) {
+        // 对链表判空处理
+        if (linked.head == null) return;
+        Node temp = linked.head;
+
+
+    }
 }
 /**
  * 总结：1、对于链表操作，第一件事就是链表判空（判断是否是空壳头节点），如果为空直接return
