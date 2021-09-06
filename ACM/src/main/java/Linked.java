@@ -347,16 +347,70 @@ public class Linked {
 
     /**
      * 对链表进行重新排序
-     * 思路：先取头节点，再取尾节点
+     * 思路：先反转链表，再按照奇偶数进行取轮次
      *
      * @param linked
      */
     public void reorderList(Linked linked) {
         // 对链表判空处理
         if (linked.head == null) return;
+
+        Node newHead = null;
         Node temp = linked.head;
+        int linkedSize = 0;
+        while (temp != null) {
+            linkedSize++;
+            Node x = new Node(temp.data);
+            if (newHead == null) {
+                newHead = x;
+            } else {
+                x.next = newHead;
+                newHead = x;
+            }
+            temp = temp.next;
+        } //这样就实现了链表的反转，而且是新创建的链表
 
-
+        // 下面开始拼接
+        Node reorderHead = null;
+        Node temp1 = linked.head;
+        Node temp2 = newHead;
+        Node guard = null;
+        if (linkedSize % 2 == 0) { //如果是偶数就取（linkedSize/2）轮
+            for (int k = 0; k < (linkedSize / 2); k++) {
+                Node i = new Node(temp1.data);
+                Node j = new Node(temp2.data);
+                if (reorderHead == null) {
+                    reorderHead = i;
+                    reorderHead.next = j;
+                } else {
+                    guard.next = i;
+                    i.next = j;
+                }
+                guard = j;
+                temp1 = temp1.next;
+                temp2 = temp2.next;
+            }
+        } else { //如果是偶数就取（linkedSize/2）+1 轮
+            for (int k = 0; k < (linkedSize / 2) + 1; k++) {
+                Node i = new Node(temp1.data);
+                Node j = new Node(temp2.data);
+                if (reorderHead == null) {
+                    reorderHead = i;
+                    reorderHead.next = j;
+                } else {
+                    guard.next = i;
+                    i.next = j;
+                }
+                guard = j;
+                // 奇数的最后一轮
+                if (k == ((linkedSize / 2) + 1)) {
+                    Node node = new Node(temp1.data);
+                    guard.next = node;
+                }
+                temp1 = temp1.next;
+                temp2 = temp2.next;
+            }
+        }
     }
 }
 /**

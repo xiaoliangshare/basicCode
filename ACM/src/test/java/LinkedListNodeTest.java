@@ -85,6 +85,9 @@ public class LinkedListNodeTest extends TestCase {
         //Linked.Node newHead=linked.reverseLinked2(linked);
         System.out.println(newHead.data);
 
+        linked.printLinked(linked);//[1], 说明已经改变了原链表的结构
+
+
     }
 
     /**
