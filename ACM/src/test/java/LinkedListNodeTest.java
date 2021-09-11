@@ -1,6 +1,7 @@
 import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.theories.suppliers.TestedOn;
 import org.w3c.dom.Node;
 
 import java.util.ArrayList;
@@ -108,5 +109,22 @@ public class LinkedListNodeTest extends TestCase {
 
         Linked.Node node = Linked.addTwoNumbers(linked1.head, linked2.head);
         System.out.println(node.data);
+    }
+
+    @Test
+    public void testRemoveTailNode(){
+        Linked linked = new Linked();
+        linked.add(1);
+        linked.add(2);
+        linked.add(3);
+        linked.add(4);
+        linked.add(5);
+        linked.removeTailNode(linked);
+        linked.printLinked(linked);
+    }
+
+    @Test
+    public void testString2List(){
+        String s="[{\"inv_org\":\"A66\",\"delaySeconds\":6}]";
     }
 }

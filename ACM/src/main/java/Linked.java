@@ -62,6 +62,32 @@ public class Linked {
 
     }
 
+    // 删除尾节点
+
+    /**
+     * 对于链表的尾节点q，不可以直接free(q)
+     * 必须要找到前驱节点，比如前驱节点为p
+     * 这时p.next的值是q
+     * 要删除q，不仅要free(q) 还需设置p->next=NULL
+     * 否则 下次遍历 到p的时候，访问p->next的值，还是q的值，而这时q已经释放，导致野指针错误
+     *
+     * @param linked
+     */
+    public void removeTailNode(Linked linked) {
+        if (linked.head == null) return;
+        Node temp = linked.head;
+        Node p = null;
+        while (temp.next != null) {
+            p = temp;
+            temp = temp.next;
+        } // 执行完之后temp就是尾节点
+        if (temp.next == null) {
+            temp = null;
+            p.next = null;
+        }
+        //temp=null;
+    }
+
     //方法3：查找给定值value
     public Node find(int value) {
         Node temp = head;
