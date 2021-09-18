@@ -9,11 +9,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Demo" />
         <module name="ACM" />
+        <module name="VerifyRule" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="ACM" target="8" />
       <module name="Demo" target="8" />
+      <module name="VerifyRule" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

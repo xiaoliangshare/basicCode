@@ -1,4 +1,10 @@
+import com.sun.tools.javac.util.StringUtils;
+import org.omg.PortableInterceptor.INACTIVE;
+
+import java.lang.invoke.SwitchPoint;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Objects;
 
 /**
  * @description: 基于动态扩容的数组实现栈（也可以用链表实现栈），栈的操作比较受限，只能在栈顶push和pop元素
@@ -23,10 +29,24 @@ public class ArrayStack {
      */
     private int n;
 
+    /**
+     * 指定容量的构造栈
+     *
+     * @param n
+     */
     public ArrayStack(int n) {
         this.array = new String[n];
         this.currentCapacity = 0;
         this.n = n;
+    }
+
+    /**
+     * 默认容量构造栈
+     */
+    public ArrayStack() {
+        this.array = new String[1000];
+        this.currentCapacity = 0;
+        this.n = array.length;
     }
 
     /**
@@ -49,8 +69,9 @@ public class ArrayStack {
     public String pop() {
         // 如果栈为空，直接返回null
         if (currentCapacity == 0) return null;
+        String temp = array[currentCapacity - 1];
         currentCapacity--;
-        return array[currentCapacity - 1];
+        return temp;
     }
 
     /**
@@ -66,6 +87,142 @@ public class ArrayStack {
             }
         }
         System.out.println(stack);
+    }
+
+    /**
+     * 练习1：表达式求值
+     */
+    public static String expressionCalculation(String expression) {
+        // 1、参数校验
+        if (expression == null || expression.trim().equals("")) return null;
+        // 先定义两个栈，一个栈保存数字，一个栈保存操作符号
+        ArrayStack num = new ArrayStack();
+        ArrayStack symbol = new ArrayStack();
+
+        // 开始遍历表达式
+        for (int i = 0; i < expression.length(); i++) {
+            char c = expression.charAt(i);
+            if (Character.isDigit(c)) { //如果是数字,肯定直接入栈
+                num.push(String.valueOf(c));
+            } else {
+                String curOperation = String.valueOf(c);
+                //如果是操作符先比较优先级，在看要不要入栈
+                if (symbol.currentCapacity == 0) { //如果栈为空就直接入栈
+                    symbol.push(curOperation);
+                } else {
+                    // 如果是 ")"  必须取出符号来进行运算,一直pop到 "(" 才停止运算
+                    if (curOperation.equals(OperationEnum.parentheses_right.getName())) {
+                        String popOperation = symbol.pop();
+                        while (!popOperation.equals(OperationEnum.parentheses_left.getName())) {
+                            String num1 = num.pop(); //上面元素
+                            String num2 = num.pop(); //下面元素
+                            String result = calculate(num1, num2, popOperation);
+                            if (result != null) {
+                                num.push(result);
+                            }
+                            popOperation = symbol.pop();
+                        }
+                        continue;
+                    }
+                    //取栈顶的一个元素来比
+                    String popOperation = symbol.pop();
+                    // 如果权重<=栈顶操作符，需要取数进行运算
+                    while (!Objects.isNull(popOperation) && OperationEnum.getWeightByName(curOperation) <= OperationEnum.getWeightByName(popOperation)) {
+                        String num1 = num.pop(); //上面元素
+                        String num2 = num.pop(); //下面元素
+                        String result = calculate(num1, num2, popOperation);
+                        if (result != null) {
+                            num.push(result);
+                        }
+                        popOperation = symbol.pop();
+                    }
+                    // 如果权重>栈顶操作符,直接
+                    if (popOperation != null) {
+                        symbol.push(popOperation); //因为刚才pop出来了，现在得push回去
+                    }
+                    symbol.push(curOperation);
+                }
+            }
+        }
+        // 遍历完整个表达式之后需要清空两个栈，此时只会有一个操作符号在
+        if (symbol.currentCapacity == 1) {
+            String popOperation = symbol.pop();
+            String num1 = num.pop(); //上面元素
+            String num2 = num.pop(); //下面元素
+            String result = calculate(num1, num2, popOperation);
+            if (result != null) {
+                num.push(result); //这里存的最后一个值就是表达式的结果
+            }
+
+        }
+        return num.pop();
+    }
+
+    /**
+     * 判断表达式是否合法
+     *
+     * @param expression
+     * @return
+     */
+    public static boolean isLegal(String expression) {
+        // String expression="([{}])";
+        if (expression == null || expression.trim().equals("")) return true;
+        ArrayStack stack = new ArrayStack();
+        for (int i = 0; i < expression.length(); i++) {
+            // 拿到这个表达式之后
+            String s = expression.substring(i, i + 1);
+            Integer code = KuohaoEnum.getCodeByName(s);
+            // 是左括号
+            if (code != null && code < 5) {
+                stack.push(s);
+                // 如果是右括号则将栈顶元素pop出来
+            } else if (code != null && code > 5) {
+                String pop = stack.pop();
+                if (pop != null) {
+                    if (KuohaoEnum.getCodeByName(pop) + KuohaoEnum.getCodeByName(s) == 10) {
+                        // 说明此时是合法的，然后继续遍历下一个元素
+                        continue;
+                    } else {
+                        // 此时可以认为是不合法的
+                        return false;
+                    }
+                }
+            }
+        }
+        // 遍历完成之后，如果合法则栈内没有元素，否则不合法
+        if (stack.currentCapacity == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * 计算两个操作数的结果
+     *
+     * @param num1      上面
+     * @param num2      下面
+     * @param operation 操作符号
+     * @return
+     */
+    private static String calculate(String num1, String num2, String operation) {
+        if (num1 == null || num2 == null || operation == null) return null;
+        String result = null;
+        switch (operation) {
+            case "+":
+                result = String.valueOf(Integer.valueOf(num2) + Integer.valueOf(num1));
+                return result;
+            case "-":
+                result = String.valueOf(Integer.valueOf(num2) - Integer.valueOf(num1));
+                return result;
+            case "*":
+                result = String.valueOf(Integer.valueOf(num2) * Integer.valueOf(num1));
+                return result;
+            case "/":
+                result = String.valueOf(Integer.valueOf(num2) / Integer.valueOf(num1));
+                return result;
+        }
+        return result;
     }
 
 }
