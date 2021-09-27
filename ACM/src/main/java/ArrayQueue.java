@@ -1,5 +1,6 @@
 /**
- * @description: 基于数组实现的队列，最简单的队列
+ * @description: 基于数组实现的队列，最简单的队列：简单队列就是就是指针在前后移动，
+ * 缺点就是出队之后队头存在大量空闲空间用不了，需要做数据搬移操作，时间复杂度为o(n)
  * @author: lianghaohong
  * @date: 2021/9/27
  * @time: 10:11 上午
@@ -34,6 +35,24 @@ public class ArrayQueue {
         tail++;
         return true;
     }
+
+    /**
+     * 入队优化：在插入数据的时候，判断队列是否已满，判断队头是否有空闲元素，触发数据搬移操作
+     */
+    public boolean enqueueOptimize(String item) {
+        if (tail == n) {
+            if (head == 0) return false; // tail==n && head==0 表示队列已满
+            // 如果head!=0 进行数据搬移操作
+            for (int i = head; i < tail; i++) {
+                items[i - head] = items[i];
+            }
+            tail -= head;
+            head = 0;
+        }
+        items[tail++] = item;
+        return true;
+    }
+
 
     /**
      * 出队操作：从队头删除元素
