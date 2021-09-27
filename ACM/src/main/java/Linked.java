@@ -44,7 +44,7 @@ public class Linked {
 
     // 方法2：在指定节点后面移除节点x
     public void remove(Node a, Node x) {
-        if (a == null) { // 说明x节点就是head节点, 删除头节点也可以直接用 head=null
+        if (a == null) { // 说明x节点就是head节点
             head = head.next;
         } else {
             a.next = x.next;
