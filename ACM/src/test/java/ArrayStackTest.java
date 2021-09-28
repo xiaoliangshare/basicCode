@@ -43,9 +43,9 @@ public class ArrayStackTest {
 
     @Test
     public void testIsLegal() {
-        String expression = "(3+5+4+-$#1)";
+        String expression = "([{}]))";
         boolean legal = ArrayStack.isLegal(expression);
-        System.out.println(legal);
+        System.out.println(legal + ":" + (legal ? "合法" : "不合法"));
 
     }
 

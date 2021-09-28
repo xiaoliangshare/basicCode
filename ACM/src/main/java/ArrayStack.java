@@ -1,10 +1,7 @@
-import com.sun.tools.javac.util.StringUtils;
-import org.omg.PortableInterceptor.INACTIVE;
 
-import java.lang.invoke.SwitchPoint;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Objects;
+import java.util.Stack;
 
 /**
  * @description: 基于动态扩容的数组实现栈（也可以用链表实现栈），栈的操作比较受限，只能在栈顶push和pop元素
@@ -53,7 +50,7 @@ public class ArrayStack {
      * 在栈顶添加元素,需要判断是否需要扩容
      */
     public boolean push(String value) {
-        // 当数组的当前容量=数组最大容量
+        // 当数组的当前容量=数组最大容量，两倍的扩容
         if (currentCapacity == n) {
             String[] newArray = Arrays.copyOf(array, 2 * currentCapacity);
             array = newArray;
@@ -91,6 +88,7 @@ public class ArrayStack {
 
     /**
      * 练习1：表达式求值
+     * 思路：定义两个栈，一个存操作数子，一个存操作符
      */
     public static String expressionCalculation(String expression) {
         // 1、参数校验
@@ -105,8 +103,8 @@ public class ArrayStack {
             if (Character.isDigit(c)) { //如果是数字,肯定直接入栈
                 num.push(String.valueOf(c));
             } else {
-                String curOperation = String.valueOf(c);
-                //如果是操作符先比较优先级，在看要不要入栈
+                String curOperation = String.valueOf(c); // 将char-->String
+                // 如果是操作符先比较优先级，在看要不要入栈
                 if (symbol.currentCapacity == 0) { //如果栈为空就直接入栈
                     symbol.push(curOperation);
                 } else {
@@ -159,7 +157,14 @@ public class ArrayStack {
     }
 
     /**
-     * 判断表达式是否合法
+     * 判断表达式是否合法，此处只判断括号是否合法
+     * 判断条件有：
+     * 1，左括号与右括号个数相同
+     * 2，两个运算符不可以相邻
+     * 3，两个数字不可以相邻
+     * 4，运算符的左边不可以是左括号，右边不可以是右括号。【如： （+ 或 +）】
+     * 5，右括号不可以在第一个位置，左括号不可以在最后一个位置。【如：）x（】
+     * 6，一对括号中间不能为空且必须为合法的表达式【如：（）】
      *
      * @param expression
      * @return
@@ -183,7 +188,7 @@ public class ArrayStack {
                         // 说明此时是合法的，然后继续遍历下一个元素
                         continue;
                     } else {
-                        // 此时可以认为是不合法的
+                        // 此时即可认为不合法
                         return false;
                     }
                 }
