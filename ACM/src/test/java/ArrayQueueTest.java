@@ -1,5 +1,7 @@
 import org.junit.Test;
 
+import java.math.BigDecimal;
+
 /**
  * @description:
  * @author: lianghaohong
@@ -20,5 +22,12 @@ public class ArrayQueueTest {
         System.out.println(dequeue);
         System.out.println("队列的头指针为：" + arrayQueue.head);
         System.out.println("队列的尾指针为：" + arrayQueue.tail);
+    }
+
+    @Test
+    public void testBigDecimal(){
+        BigDecimal bigDecimal = new BigDecimal(1.12345678);
+        BigDecimal multiply = bigDecimal.multiply(new BigDecimal(-1)).setScale(2, BigDecimal.ROUND_HALF_UP);
+        System.out.println(multiply);
     }
 }

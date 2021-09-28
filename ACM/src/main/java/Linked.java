@@ -60,7 +60,7 @@ public class Linked {
             linked.head = linked.head.next;
         }
         Node p = null;
-        while (temp.data != x.data) {
+        while (temp != null && temp.data != x.data) { //temp!=null 必须要进行判断，防止出现空指针异常
             p = temp;
             temp = temp.next;
         }//执行完成之后就找到了x节点的前驱节点p
