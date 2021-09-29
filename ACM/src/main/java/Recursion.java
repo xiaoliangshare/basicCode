@@ -12,7 +12,7 @@ import java.util.Map;
  * @time: 3:45 下午
  * Copyright (C) 2021 Meituan All rights reserved
  */
-public class DiGui {
+public class Recursion {
 
     /**
      * 青蛙跳台阶问题，青蛙一次只能跳1步/2步，跳上n阶台阶有多少种跳法
