@@ -1,10 +1,6 @@
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.Stack;
 
 /**
  * @description:
@@ -36,9 +32,9 @@ public class ArrayStackTest {
      */
     @Test
     public void testExpressionCalculation() {
-        String expression = "(3+5+4+1";
+        String expression = "(1+2*7)*3";
         String result = ArrayStack.expressionCalculation(expression);
-        System.out.println(result);
+        System.out.println("该表达式的结果为：" + result);
     }
 
     @Test
@@ -47,6 +43,12 @@ public class ArrayStackTest {
         boolean legal = ArrayStack.isLegal(expression);
         System.out.println(legal + ":" + (legal ? "合法" : "不合法"));
 
+    }
+
+    @Test
+    public void testCalculate() {
+        String calculate = ArrayStack.calculate("2", "1", "+");
+        System.out.println("计算结果为：" + calculate);
     }
 
     @Test

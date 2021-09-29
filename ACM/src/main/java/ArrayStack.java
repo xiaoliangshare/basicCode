@@ -1,4 +1,5 @@
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.Stack;
@@ -104,13 +105,16 @@ public class ArrayStack {
                 num.push(String.valueOf(c));
             } else {
                 String curOperation = String.valueOf(c); // 将char-->String
-                // 如果是操作符先比较优先级，在看要不要入栈
+                // 如果是操作符先比较优先级，再看要不要入栈
                 if (symbol.currentCapacity == 0) { //如果栈为空就直接入栈
                     symbol.push(curOperation);
                 } else {
-                    // 如果是 ")"  必须取出符号来进行运算,一直pop到 "(" 才停止运算
+                    // 如果当前符号是 ")"  必须取出符号来进行运算,一直pop到 "(" 才停止运算
                     if (curOperation.equals(OperationEnum.parentheses_right.getName())) {
                         String popOperation = symbol.pop();
+                        if (popOperation == null) {
+                            throw new RuntimeException("计算异常");
+                        }
                         while (!popOperation.equals(OperationEnum.parentheses_left.getName())) {
                             String num1 = num.pop(); //上面元素
                             String num2 = num.pop(); //下面元素
@@ -122,10 +126,10 @@ public class ArrayStack {
                         }
                         continue;
                     }
-                    //取栈顶的一个元素来比
+                    // 从符号栈中取栈顶的一个元素来比
                     String popOperation = symbol.pop();
                     // 如果权重<=栈顶操作符，需要取数进行运算
-                    while (!Objects.isNull(popOperation) && OperationEnum.getWeightByName(curOperation) <= OperationEnum.getWeightByName(popOperation)) {
+                    while (Objects.nonNull(popOperation) && OperationEnum.getWeightByName(curOperation) <= OperationEnum.getWeightByName(popOperation)) {
                         String num1 = num.pop(); //上面元素
                         String num2 = num.pop(); //下面元素
                         String result = calculate(num1, num2, popOperation);
@@ -210,24 +214,21 @@ public class ArrayStack {
      * @param operation 操作符号
      * @return
      */
-    private static String calculate(String num1, String num2, String operation) {
+    public static String calculate(String num1, String num2, String operation) {
         if (num1 == null || num2 == null || operation == null) return null;
-        String result = null;
         switch (operation) {
             case "+":
-                result = String.valueOf(Integer.valueOf(num2) + Integer.valueOf(num1));
-                return result;
+                return String.valueOf(new BigDecimal(num2).add(new BigDecimal(num1)).setScale(2, BigDecimal.ROUND_HALF_UP));
             case "-":
-                result = String.valueOf(Integer.valueOf(num2) - Integer.valueOf(num1));
-                return result;
+                return String.valueOf(new BigDecimal(num2).subtract(new BigDecimal(num1)).setScale(2, BigDecimal.ROUND_HALF_UP));
             case "*":
-                result = String.valueOf(Integer.valueOf(num2) * Integer.valueOf(num1));
-                return result;
+                return String.valueOf(new BigDecimal(num2).multiply(new BigDecimal(num1)).setScale(2, BigDecimal.ROUND_HALF_UP));
             case "/":
-                result = String.valueOf(Integer.valueOf(num2) / Integer.valueOf(num1));
-                return result;
+                return String.valueOf(new BigDecimal(num2).setScale(2, BigDecimal.ROUND_HALF_UP).divide(new BigDecimal(num1), BigDecimal.ROUND_HALF_UP));
+            default:
+                System.out.println("未知的操作符,请验证表达式中操作符的正确性！");
+                return null;
         }
-        return result;
     }
 
 }
