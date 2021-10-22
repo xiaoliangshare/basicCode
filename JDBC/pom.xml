@@ -12,5 +12,35 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
-    
+
+    <dependencies>
+        <!--junit的依赖坐标-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <!--lombok的依赖坐标-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.10</version>
+        </dependency>
+
+        <!-- inf-bom 主要是远程仓库的配置，类似于美团私服 -->
+        <dependency>
+            <groupId>com.sankuai</groupId>
+            <artifactId>inf-bom</artifactId>
+            <version>1.4.10.2</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+        <!-- zebra-dao相关 -->
+        <dependency>
+            <groupId>com.dianping.zebra</groupId>
+            <artifactId>zebra-api</artifactId>
+            <version>2.11.1</version>
+        </dependency>
+    </dependencies>
 </project>
