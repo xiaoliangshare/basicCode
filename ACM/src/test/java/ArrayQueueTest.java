@@ -30,4 +30,12 @@ public class ArrayQueueTest {
         BigDecimal multiply = bigDecimal.multiply(new BigDecimal(-1)).setScale(2, BigDecimal.ROUND_HALF_UP);
         System.out.println(multiply);
     }
+
+
+    @Test
+    public void testCompairToTime(){
+        String operateTime="2021-07-01 20:26:44";
+        String beginDateStr="2021-07-01";
+        System.out.println(operateTime.compareTo(beginDateStr));
+    }
 }
