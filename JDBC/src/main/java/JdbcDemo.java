@@ -1,5 +1,9 @@
+import java.math.BigDecimal;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * @description:
@@ -52,7 +56,7 @@ public class JdbcDemo {
     /**
      * 修改account表中的某条记录
      */
-    public static void selectAccount() {
+    public static void updateAccount() {
         Connection collection = null;
         PreparedStatement preparedStatement = null;
         try {
@@ -85,9 +89,108 @@ public class JdbcDemo {
             }
 
         }
-
-
     }
+
+
+    /**
+     * 查询表记录
+     */
+    public static void selectAccount() {
+        Connection collection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            collection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "12345678");
+            String sql = "select * from account";
+            preparedStatement = collection.prepareStatement(sql);
+            resultSet = preparedStatement.executeQuery();
+            // 处理结果,让游标向下移动一行
+            resultSet.next();
+            int id = resultSet.getInt(1);
+            String username = resultSet.getString("username");
+            BigDecimal amount = resultSet.getBigDecimal("amount");
+            System.out.println(id + "---" + username + "---" + amount);
+
+            // 正确写法, 如果是true则为数据行，如果是false则为行末尾
+            // 获取某列的数据值都统一用  数据库表中列的名称
+            while (resultSet.next()) {
+                System.out.println("id:" + resultSet.getInt("id") + "username:" + resultSet.getString("username") + "amount:" + resultSet.getBigDecimal("amount"));
+            }
+
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (preparedStatement != null) {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+            }
+            if (collection != null) {
+                try {
+                    collection.close();
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+            }
+
+        }
+    }
+
+
+    /**
+     * 查找所有的emp表并封装为List对象集合
+     *
+     * @return
+     */
+    public static List<Emp> finAll() {
+        Connection collection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        List<Emp> list = new ArrayList<>();
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            collection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "12345678");
+            String sql = "select * from account";
+            preparedStatement = collection.prepareStatement(sql);
+            resultSet = preparedStatement.executeQuery();
+
+            // 正确写法, 如果是true则为数据行，如果是false则为行末尾
+            // 获取某列的数据值都统一用列的名称
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String username = resultSet.getString("username");
+                BigDecimal amount = resultSet.getBigDecimal("amount");
+                Emp emp = new Emp();
+                emp.setId(id);
+                emp.setUsername(username);
+                emp.setAmount(amount);
+                list.add(emp);
+            }
+
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (preparedStatement != null) {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+            }
+            if (collection != null) {
+                try {
+                    collection.close();
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+            }
+        }
+        return list;
+    }
+
 
     public static void main(String[] args) throws Exception {
         // 1、添加mysql的驱动jar包，右键模块--新减一个文件夹--add as Library
