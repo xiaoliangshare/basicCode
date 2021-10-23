@@ -1,4 +1,5 @@
 import java.sql.*;
+import java.util.Collection;
 
 /**
  * @description:
@@ -40,6 +41,44 @@ public class JdbcDemo {
             if (connection != null) {
                 try {
                     connection.close();
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+            }
+
+        }
+    }
+
+    /**
+     * 修改account表中的某条记录
+     */
+    public static void selectAccount() {
+        Connection collection = null;
+        PreparedStatement preparedStatement = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            collection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "12345678");
+            String sql = "update account set amount=1000 where id=1";
+            preparedStatement = collection.prepareStatement(sql);
+            int count = preparedStatement.executeUpdate();
+            if (count > 0) {
+                System.out.println("修改成功");
+            } else {
+                System.out.println("修改失败");
+            }
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (preparedStatement != null) {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+            }
+            if (collection != null) {
+                try {
+                    collection.close();
                 } catch (SQLException throwables) {
                     throwables.printStackTrace();
                 }
