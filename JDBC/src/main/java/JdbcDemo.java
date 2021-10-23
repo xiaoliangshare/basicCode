@@ -192,6 +192,39 @@ public class JdbcDemo {
     }
 
 
+    public static List<Emp> finAll2() {
+        Connection collection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        List<Emp> list = new ArrayList<>();
+        try {
+            JDBCUtils.getConnection();
+            String sql = "select * from account";
+            preparedStatement = collection.prepareStatement(sql);
+            resultSet = preparedStatement.executeQuery();
+
+            // 正确写法, 如果是true则为数据行，如果是false则为行末尾
+            // 获取某列的数据值都统一用列的名称
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String username = resultSet.getString("username");
+                BigDecimal amount = resultSet.getBigDecimal("amount");
+                Emp emp = new Emp();
+                emp.setId(id);
+                emp.setUsername(username);
+                emp.setAmount(amount);
+                list.add(emp);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtils.close(collection, preparedStatement, resultSet);
+        }
+        return list;
+    }
+
+
     public static void main(String[] args) throws Exception {
         // 1、添加mysql的驱动jar包，右键模块--新减一个文件夹--add as Library
 
@@ -218,3 +251,8 @@ public class JdbcDemo {
         connection.close();
     }
 }
+
+/**
+ * 我们可以发现每一次都要注册驱动，获取连接，释放资源的操作
+ * 我们可以抽取一个工具类：JDBCUtils
+ */
