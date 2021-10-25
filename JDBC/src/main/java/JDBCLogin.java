@@ -14,7 +14,7 @@ import java.util.Scanner;
 
 public class JDBCLogin {
     /**
-     * 登陆方法
+     * 登陆方法，使用preparedStatement来实现
      */
     public static boolean login(String username, String password) {
         Connection connection = null;
@@ -28,8 +28,10 @@ public class JDBCLogin {
         // 连接数据库去查询
         try {
             connection = JDBCUtils.getConnection();
-            String sql = "select username, password from user where username='" + username + "' and password='" + password + "'";
+            String sql = "select username, password from user where username=? and password=?";
             preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1,username);//给第一个？赋值
+            preparedStatement.setString(2,password);//给第二个？赋值
             resultSet = preparedStatement.executeQuery();
             // 只要查到就返回true，没有就是false
             return resultSet.next();
