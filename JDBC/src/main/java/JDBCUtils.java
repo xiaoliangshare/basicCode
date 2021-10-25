@@ -25,11 +25,11 @@ public class JDBCUtils {
         try {
             Properties properties = new Properties();
             // 获取src路径下文件的方式--》ClassLoader()
-            InputStream resourceAsStream = JDBCUtils.class.getClassLoader().getResourceAsStream("jdbc.properties");
+            InputStream resourceAsStream = JDBCUtils.class.getClassLoader().getResourceAsStream("src/jdbc.properties");
             properties.load(resourceAsStream);
 
             //----另外一种方式
-            URL resource = JDBCUtils.class.getClassLoader().getResource("jdbc.properties");
+            URL resource = JDBCUtils.class.getClassLoader().getResource("src/jdbc.properties");
             String path = resource.getPath();
             properties.load(new FileReader(path));
 
