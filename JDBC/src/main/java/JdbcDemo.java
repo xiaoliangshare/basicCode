@@ -233,7 +233,7 @@ public class JdbcDemo {
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "123456");
 
         // 4、定义sql语句
-        String sql = "update account set amount = 500 where id =1";
+        String sql = "update user set password ='zzz' where username ='Lhh'";
 
         // 5、获取执行sql的对象 Statement
         Statement statement = connection.createStatement();
