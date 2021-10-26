@@ -14,22 +14,31 @@ import java.util.Scanner;
 public class DruidDemo2 {
 
     // 往user表中插入一条记录
-    public static boolean saveUser(String name, String pwd) throws Exception {
+    public static boolean saveUser(String name, String pwd) {
         // 获取数据库连接
-        Connection connection = JDBCPoolUtils.getConnection();
-        String sql = "insert into user(username,password) values( ? , ?)";
-        // 获取执行sql的对象
-        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        try {
+            connection = JDBCPoolUtils.getConnection();
+            String sql = "insert into user(username,password) values( ? , ?)";
+            // 获取执行sql的对象
+            preparedStatement = connection.prepareStatement(sql);
 
-        //给sql填充参数
-        preparedStatement.setString(1, name);
-        preparedStatement.setString(2, pwd);
+            //给sql填充参数
+            preparedStatement.setString(1, name);
+            preparedStatement.setString(2, pwd);
 
-        // 执行sql语句
-        int count = preparedStatement.executeUpdate();
-        if (count == 1) {
-            return true;
+            // 执行sql语句
+            int count = preparedStatement.executeUpdate();
+            if (count == 1) {
+                return true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            JDBCPoolUtils.close(preparedStatement, connection);
         }
+
         return false;
     }
 
