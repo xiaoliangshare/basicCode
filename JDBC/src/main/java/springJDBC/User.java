@@ -1,3 +1,5 @@
+package springJDBC;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,7 +18,7 @@ public class User {
     /**
      * 此处的属性需要和数据库的字段一致才行
      */
-    private int id;
+    private Integer id;
     private String username;
     private String password;
 }
