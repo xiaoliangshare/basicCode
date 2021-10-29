@@ -73,8 +73,8 @@ public class JDBCTemplateDemo {
     }
 
     /**
-     *  一般我们用BeanPropertyRowMapper的实现类，也可以完成数据到javaBean的自动封装
-     *  BeanPropertyRowMapper实现了RowMapper接口，直接放自己定义好的实体类就行。
+     * 一般我们用BeanPropertyRowMapper的实现类，也可以完成数据到javaBean的自动封装
+     * BeanPropertyRowMapper实现了RowMapper接口，直接放自己定义好的实体类就行。
      */
     public static void quertAllUserForBeanList2() {
         String sql = "select * from user";

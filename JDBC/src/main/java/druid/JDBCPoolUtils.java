@@ -3,7 +3,9 @@ package druid;
 import com.alibaba.druid.pool.DruidDataSourceFactory;
 
 import javax.sql.DataSource;
+import java.io.FileReader;
 import java.io.InputStream;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -27,6 +29,11 @@ public class JDBCPoolUtils {
         try {
             InputStream resourceAsStream = JDBCPoolUtils.class.getClassLoader().getResourceAsStream("druid.properties");
             properties.load(resourceAsStream);
+
+            // 这也是一种加载方式
+//            URL resource = JDBCPoolUtils.class.getClassLoader().getResource("druid.properties");
+//            String path = resource.getPath();
+//            properties.load(new FileReader(path));
 
             dataSource = DruidDataSourceFactory.createDataSource(properties);
         } catch (Exception e) {
