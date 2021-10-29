@@ -1,13 +1,0 @@
-
-V
-java:S2259"@A "NullPointerException" could be thrown; "s1" is nullable here.(îãÅ
-T
-java:S1854	"9Remove this useless assignment to local variable "input".(Úî¿òøÿÿÿÿ
-S	java:S106"9Replace this use of System.out or System.err by a logger.(åšûÿÿÿÿ
-S	java:S106"9Replace this use of System.out or System.err by a logger.(¶ä½şÿÿÿÿ
-S	java:S106"9Replace this use of System.out or System.err by a logger.(Ñ£±Ôúÿÿÿÿ
-S	java:S106"9Replace this use of System.out or System.err by a logger.(¦Ã×Ãÿÿÿÿÿ
-N	java:S106"9Replace this use of System.out or System.err by a logger.(îãÅ
-N	java:S106"9Replace this use of System.out or System.err by a logger.(š˜–‡
-E
-java:S1481	"*Remove this unused "input" local variable.(Úî¿òøÿÿÿÿ
