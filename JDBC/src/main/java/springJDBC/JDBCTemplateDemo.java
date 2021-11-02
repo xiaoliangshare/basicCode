@@ -5,12 +5,10 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
-import java.io.InputStream;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
-import java.util.Properties;
 
 /**
  * @description: spring框架（Java EE的灵魂框架）对JDBC进行了封装，提供了一个 "JDBCTemplate对象" 简化了JDBC的开发

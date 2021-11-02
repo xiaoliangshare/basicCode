@@ -68,6 +68,7 @@ public class JDBCPoolUtils {
 
         if (connection != null) {
             try {
+                // 由于该连接是从数据库连接池中拿出来的，该close()并没有真正关闭连接，而是将连接归还到连接池，池技术对close()做了增强，之所以也叫close(),是为了满足开发者的编程习惯
                 connection.close();
             } catch (SQLException e) {
                 e.printStackTrace();
