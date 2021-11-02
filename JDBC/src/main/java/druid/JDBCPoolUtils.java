@@ -23,7 +23,7 @@ public class JDBCPoolUtils {
 
     // 定义成员变量
     private static DataSource dataSource;
-    private static Properties properties = new Properties();
+    private static final Properties properties = new Properties();
 
     static {
         try {

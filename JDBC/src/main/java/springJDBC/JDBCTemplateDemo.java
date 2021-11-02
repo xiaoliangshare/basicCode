@@ -135,10 +135,10 @@ public class JDBCTemplateDemo {
         //deleteUser();
         //queryUser();
         //queryAllUser();
-        quertAllUserForBeanList2();
+        //quertAllUserForBeanList2();
 
 
 
-        //countAllUser();
+        countAllUser();
     }
 }
