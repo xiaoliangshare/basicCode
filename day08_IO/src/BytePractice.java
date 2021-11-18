@@ -12,7 +12,7 @@ public class BytePractice {
         FileInputStream fis =new FileInputStream("E:\\1.jpg");
         FileOutputStream fos=new FileOutputStream("day08_IO\\test.jpg");
         byte[] bytes=new byte[1024];
-        int len=0;//记录一次读取有效字节的个数
+        int len;//记录一次读取有效字节的个数
         while ((len=fis.read(bytes))!=-1){
             fos.write(bytes, 0 , len);
         }
