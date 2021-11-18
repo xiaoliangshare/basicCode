@@ -12,7 +12,7 @@ package com.hh;
                    2、不安全，容易在运行的时候发生ClassCastException，你存可以存，但是运行时报异常就GG了
 */
 
-//定义一个泛型类
+//定义一个泛型类，一个泛型代表一个类型变量
 public class MyGeneric<E> {
 
     //1、定义泛型方法: 修饰符 <代表泛型的变量> 返回值类型 方法名(参数){ }
@@ -23,6 +23,10 @@ public class MyGeneric<E> {
     public static <S> int method2(S s){
         System.out.println(s);
         return 100;
+    }
+
+    public static <M> M Method3(M m){
+        return m;
     }
 
     private E field; //field字段
@@ -62,6 +66,7 @@ class Test{
         //直接用泛型类名.泛型方法
         MyGeneric.method2(1);
         MyGeneric.method2("LHH");
+
 
 
     }

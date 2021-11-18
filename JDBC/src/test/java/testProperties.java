@@ -4,6 +4,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Properties;
+import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * @description:
@@ -19,13 +20,16 @@ public class testProperties {
 //        InputStream resourceAsStream = testProperties.class.getClassLoader().getResourceAsStream("jdbc.properties");
 //        properties.load(resourceAsStream);
 
-        URL resource = testProperties.class.getClassLoader().getResource("src/jdbc.properties");
-        String path = resource.getPath();
-        properties.load(new FileReader(path));
-
-        String url = properties.getProperty("url");
-        String user = properties.getProperty("user");
-        System.out.println("url:" + url + ",user:" + user);
+//        URL resource = testProperties.class.getClassLoader().getResource("src/jdbc.properties");
+//        String path = resource.getPath();
+//        properties.load(new FileReader(path));
+//
+//        String url = properties.getProperty("url");
+//        String user = properties.getProperty("user");
+//        System.out.println("url:" + url + ",user:" + user);
+        String s = System.lineSeparator();
+        System.out.print("xxxx");
+        System.out.print("fff");
 
 
     }

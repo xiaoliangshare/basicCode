@@ -1,6 +1,7 @@
 package reflex;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -16,15 +17,21 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Person {
+public class Person implements Comparable<Person> {
     private String name;
     private Integer age;
     public Date birthday;
 
-    public void eat(){
+    public void eat() {
         System.out.println("人都会吃东西");
     }
-    public void eat(String food){
-        System.out.println("人都会吃"+food);
+
+    public void eat(String food) {
+        System.out.println("人都会吃" + food);
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        return this.getAge() - o.getAge();
     }
 }
