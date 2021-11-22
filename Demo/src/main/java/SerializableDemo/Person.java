@@ -18,12 +18,15 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Person implements Comparable<Person>, Serializable {
+    // 指定序列化版本号
+    private static final long serialVersionUID = 1L;
+
     transient private String name; // 如果使用transient表示该字段不需要序列化
 
     private Integer age;
     public Date birthday;
 
-    public Chinaese chinaese;
+    //public Chinaese chinaese;
 
     public void eat() {
         System.out.println("人都会吃东西");

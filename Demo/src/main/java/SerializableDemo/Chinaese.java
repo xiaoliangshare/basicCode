@@ -1,5 +1,9 @@
 package SerializableDemo;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 
 /**
@@ -9,6 +13,10 @@ import java.io.Serializable;
  * @time: 8:24 下午
  * Copyright (C) 2021 Meituan All rights reserved
  */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Chinaese implements Serializable {
     private int area = 960;
+
 }
