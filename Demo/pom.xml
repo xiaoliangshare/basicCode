@@ -26,6 +26,27 @@
             <artifactId>lombok</artifactId>
             <version>1.18.10</version>
         </dependency>
+        <!--StringUtils包-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.9</version>
+        </dependency>
+
+        <!--redis包依赖-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-data-redis</artifactId>-->
+<!--            <version>2.6.1</version>-->
+<!--        </dependency>-->
+
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>3.7.1</version>
+        </dependency>
+
+
     </dependencies>
 
 
