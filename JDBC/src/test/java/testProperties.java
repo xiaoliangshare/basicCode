@@ -1,12 +1,12 @@
 import org.junit.Test;
+import springJDBC.User;
 
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 import java.util.concurrent.ThreadPoolExecutor;
+import java.util.stream.Collectors;
 
 /**
  * @description:
@@ -56,17 +56,16 @@ public class testProperties {
         strings2.add("1");
         strings2.add("2");
 
-        boolean b = strings.removeAll(strings2);
+        //boolean b = strings.removeAll(strings2);
 
-        List<List<String>> lists = splitList(strings, 5);
+        List<List<String>> lists = splitList(strings, 2);
         lists.stream().forEach(
                 list -> {
                     System.out.println(list.size());
                 }
         );
 
-
-        Integer.parseInt("1");
+        System.out.println(Integer.parseInt("1"));
         System.out.println();
 
 //        for (int i = 0; i < strings.size(); i = i + 200) {
@@ -74,5 +73,42 @@ public class testProperties {
 //
 //        }
 
+
+        System.out.println(String.format("list数据，%s", strings));
+
+
+    }
+
+    @Test
+    public void testSort() {
+        List<Integer> integers = new ArrayList<>();
+        integers.add(43);
+        integers.add(1);
+        integers.add(55);
+
+        String s = "21,2,3";
+
+
+        List<User> users = new ArrayList<>();
+        users.add(new User(1, "32", "WMS-124"));
+        users.add(new User(2, "2", "WMS-123"));
+        users.add(new User(3, "10", "WMS-125"));
+        System.out.println(users);
+
+        users = users.stream().sorted(Comparator.comparing(User::getUsername)).collect(Collectors.toList());
+        System.out.println(users);
+
+    }
+
+    @Test
+    public void testStream() {
+        List<User> users = new ArrayList<>();
+        users.add(new User(1, "32", "aa"));
+        users.add(new User(2, "2", "aa"));
+        users.add(new User(3, "10", "aa"));
+        System.out.println(users);
+
+        boolean noneMatch = users.stream().noneMatch(user -> user.equals("10"));
+        System.out.println(noneMatch);
     }
 }
