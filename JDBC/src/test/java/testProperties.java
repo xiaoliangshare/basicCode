@@ -86,7 +86,10 @@ public class testProperties {
         integers.add(1);
         integers.add(55);
 
-        String s = "21,2,3";
+        String s = "21,3,10";
+        List<Integer> collect = Arrays.asList(s.split(",")).stream().map(Integer::valueOf).sorted().collect(Collectors.toList());
+        // Collections.sort(collect);
+        System.out.println(collect);
 
 
         List<User> users = new ArrayList<>();
@@ -96,6 +99,7 @@ public class testProperties {
         System.out.println(users);
 
         users = users.stream().sorted(Comparator.comparing(User::getUsername)).collect(Collectors.toList());
+        System.out.println("====排序之后的user===");
         System.out.println(users);
 
     }
@@ -107,6 +111,7 @@ public class testProperties {
         users.add(new User(2, "2", "aa"));
         users.add(new User(3, "10", "aa"));
         System.out.println(users);
+
 
         boolean noneMatch = users.stream().noneMatch(user -> user.equals("10"));
         System.out.println(noneMatch);
