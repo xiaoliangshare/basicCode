@@ -3,6 +3,7 @@ import springJDBC.User;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.net.URL;
 import java.util.*;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -112,8 +113,22 @@ public class testProperties {
         users.add(new User(3, "10", "aa"));
         System.out.println(users);
 
+        users = users.stream().filter(user -> user.getUsername().equals("200")).collect(Collectors.toList());
 
-        boolean noneMatch = users.stream().noneMatch(user -> user.equals("10"));
-        System.out.println(noneMatch);
+        //boolean noneMatch = users.stream().noneMatch(user -> user.equals("10"));
+        System.out.println(users);
+    }
+
+
+    // "pacPrice":"0E-10"
+    @Test
+    public void testPacPrice() {
+        String str = "0E-10";
+        String str1 = "0.0000000000";
+
+        //new BigDecimal()
+        BigDecimal bigDecimal = new BigDecimal(str1);
+        System.out.println(bigDecimal);
+        //System.out.println(bigDecimal.add(new BigDecimal(1)));
     }
 }
