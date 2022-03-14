@@ -38,6 +38,12 @@ public class CombineTest {
             Student student = combine.getStudent();
             System.out.println(student.getAge());
         }
+    }
 
+    @Test
+    public void testEmptyList(){
+        List<Student> studentList = new ArrayList<>();
+        List<Integer> collect = studentList.stream().map(Student::getAge).collect(Collectors.toList());
+        System.out.println(collect);
     }
 }
