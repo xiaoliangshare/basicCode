@@ -1,5 +1,6 @@
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -45,5 +46,12 @@ public class CombineTest {
         List<Student> studentList = new ArrayList<>();
         List<Integer> collect = studentList.stream().map(Student::getAge).collect(Collectors.toList());
         System.out.println(collect);
+    }
+
+
+    @Test
+    public void testBigDecimal(){
+        BigDecimal divide = new BigDecimal(2).setScale(2, BigDecimal.ROUND_HALF_UP).divide(new BigDecimal(0), BigDecimal.ROUND_HALF_UP);
+        System.out.println(divide);
     }
 }
