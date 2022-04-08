@@ -18,6 +18,7 @@ public class TestMyThread {
         System.out.println(Thread.currentThread().getName());//获取当前正在执行的线程名称,这里就是main
         for (int i = 0; i < 10; i++) {
             System.out.println("主线程main:" + i);
+            System.out.println("当前线程优先级为："+Thread.currentThread().getPriority());
             try {
                 yield();
                 Thread.sleep(1000);

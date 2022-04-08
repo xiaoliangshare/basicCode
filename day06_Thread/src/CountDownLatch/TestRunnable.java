@@ -45,16 +45,15 @@ public class TestRunnable implements Runnable {
             new Thread(new TestRunnable(countDownLatch, "子线程" + i)).start();
         }
 
-        //
         System.out.println("主线程阻塞，等待所有子线程执行完成！");
 
-
+        //--------在这上面之前主线程和5个子线程并发执行，可以把它看作是一个执行屏障--------------------------
         try {
-            countDownLatch.await(); // 阻塞main线程，只有当子线程完成之后才执行，即countDown()为0才继续执行下面的语句
+            // 阻塞main线程，主线程等待子线程，只有当子线程完成之后才执行，即countDown()为0才继续执行下面的语句
+            countDownLatch.await();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
         System.out.println("所有线程执行完成！");
     }
 }
