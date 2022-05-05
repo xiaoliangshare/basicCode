@@ -40,6 +40,9 @@ public class ThreadPool {
      * 使用ThreadPoolExecutor
      */
     public void useThreadPoolExecutor(){
+        // 7大参数
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(5, 5, 10, TimeUnit.SECONDS, new LinkedBlockingQueue<>(100), Executors.defaultThreadFactory(), new ThreadPoolExecutor.CallerRunsPolicy());
+
 
     }
 }
