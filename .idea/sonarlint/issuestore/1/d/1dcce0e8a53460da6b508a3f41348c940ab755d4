@@ -1,0 +1,52 @@
+
+nsquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(Ÿ×ş
+%squid:RedundantThrowsDeclarationCheck "lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(œû¿Ø
+O
+squid:S106*"9Replace this use of System.out or System.err by a logger.(œÛ²
+T
+squid:S106+"9Replace this use of System.out or System.err by a logger.(Å‰õ­úÿÿÿÿ
+T
+squid:S106,"9Replace this use of System.out or System.err by a logger.(¥é´øÿÿÿÿ
+T
+squid:S106-"9Replace this use of System.out or System.err by a logger.(ìÚ‹ûÿÿÿÿ
+T
+squid:S106/"9Replace this use of System.out or System.err by a logger.(©£›–øÿÿÿÿ
+N
+squid:S1060"9Replace this use of System.out or System.err by a logger.(¦…·f
+O
+squid:S1061"9Replace this use of System.out or System.err by a logger.(Ò®ºÈ
+T
+squid:S1062"9Replace this use of System.out or System.err by a logger.(™Ş•ºıÿÿÿÿ
+T
+squid:S1068"9Replace this use of System.out or System.err by a logger.(À¹ÿÿÿÿÿ
+T
+squid:S1069"9Replace this use of System.out or System.err by a logger.(Ñ©Ñßøÿÿÿÿ
+T
+squid:S106:"9Replace this use of System.out or System.err by a logger.(ù«›İıÿÿÿÿ
+T
+squid:S106<"9Replace this use of System.out or System.err by a logger.(¶ì«¼ÿÿÿÿÿ
+T
+squid:S106="9Replace this use of System.out or System.err by a logger.(Â‹Äûÿÿÿÿ
+T
+squid:S106>"9Replace this use of System.out or System.err by a logger.(™èÆşÿÿÿÿ
+T
+squid:S106E"9Replace this use of System.out or System.err by a logger.(¶ì«¼ÿÿÿÿÿ
+T
+squid:S106F"9Replace this use of System.out or System.err by a logger.(Â‹Äûÿÿÿÿ
+O
+squid:S106V"9Replace this use of System.out or System.err by a logger.(—Ş“
+O
+squid:S106Y"9Replace this use of System.out or System.err by a logger.(á•ú‘
+O
+squid:S106`"9Replace this use of System.out or System.err by a logger.(ÕÜÖ§
+O
+squid:S106c"9Replace this use of System.out or System.err by a logger.(¿™è‘
+T
+squid:S106k"9Replace this use of System.out or System.err by a logger.(¯’îñùÿÿÿÿ
+T
+squid:S106t"9Replace this use of System.out or System.err by a logger.(“Ö¥²úÿÿÿÿ
+O
+squid:S106z"9Replace this use of System.out or System.err by a logger.(‡¤Ÿ”
+gsquid:CommentedOutCodeLine!"<This block of commented-out lines of code should be removed.(²Ì ›ıÿÿÿÿ
+gsquid:CommentedOutCodeLine\"<This block of commented-out lines of code should be removed.(ÕŠòÌıÿÿÿÿ
+hsquid:CommentedOutCodeLine…"<This block of commented-out lines of code should be removed.(‘æ¶úıÿÿÿÿ

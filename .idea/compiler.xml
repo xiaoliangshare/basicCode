@@ -7,12 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="JDBC" />
         <module name="Demo" />
-        <module name="ACM" />
-        <module name="VerifyRule" />
         <module name="ConstractorDemo" />
         <module name="Xml" />
+        <module name="maven-chat03" />
+        <module name="JDBC" />
+        <module name="ACM" />
+        <module name="VerifyRule" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -20,6 +21,8 @@
       <module name="ConstractorDemo" target="8" />
       <module name="Demo" target="8" />
       <module name="JDBC" target="8" />
+      <module name="Maven-chart02" target="8" />
+      <module name="maven-chat03" target="8" />
       <module name="VerifyRule" target="8" />
       <module name="Xml" target="8" />
     </bytecodeTargetLevel>

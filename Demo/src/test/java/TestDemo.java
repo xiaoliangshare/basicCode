@@ -1,8 +1,8 @@
 import java.math.BigDecimal;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
  * @description:
@@ -34,15 +34,10 @@ public class TestDemo {
     }
 
     public static void main(String[] args) {
+        BigDecimal bigDecimal=null;
+        bigDecimal.setScale(2,BigDecimal.ROUND_HALF_UP);
 
-        BigDecimal bigDecimal = new BigDecimal("1.23456");
-        String[] split = bigDecimal.toString().split("\\.");
-        System.out.println(split[1]);
-
-        User user = new User();
-        user.setName("   xxx  ");
-        System.out.println("之前："+user.getName()+user.getName().length());
-        user.validName();
-        System.out.println("之后："+user.getName()+user.getName().length());
+        // 所以运行maven需要先安装jdk
     }
+
 }

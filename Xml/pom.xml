@@ -41,5 +41,11 @@
             <artifactId>zebra-api</artifactId>
             <version>2.11.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.meituan.service.mobile</groupId>
+            <artifactId>mtthrift</artifactId>
+            <version>2.3.2</version>
+        </dependency>
+
     </dependencies>
 </project>
