@@ -1,5 +1,9 @@
+import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @description:
@@ -10,19 +14,18 @@ import java.util.List;
  */
 public class ListDemo {
     public static void main(String[] args) {
-        List<String> ss=new ArrayList<>();
-        ss.add("aa");
-        ss.add("bb");
-        ss.add("cc");
 
-        List<String> ss1=new ArrayList<>();
+        List<User> userList=null;
+        userList.stream().forEach(System.out::println);
+
+        Map<String,String> map=new HashMap<>();
 
 
-        List<String> retList=new ArrayList<>();
-        retList.addAll(ss);
-        retList.addAll(ss1);
+        for (User user : userList) {
+            map.put(user.getCode(),user.getName());
+        }
 
-        System.out.println(retList);
+
 
     }
 }
