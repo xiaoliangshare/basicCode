@@ -1,0 +1,42 @@
+
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ÿ×ş
+‚
+java:S1130 "lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(œû¿Ø
+V	java:S125!"<This block of commented-out lines of code should be removed.(²Ì ›ıÿÿÿÿ
+\
+java:S1075)"ARefactor your code to get this URI from a customizable parameter.(€š‹øÿÿÿÿÿ
+N	java:S106*"9Replace this use of System.out or System.err by a logger.(œÛ²
+S	java:S106+"9Replace this use of System.out or System.err by a logger.(Å‰õ­úÿÿÿÿ
+S	java:S106,"9Replace this use of System.out or System.err by a logger.(¥é´øÿÿÿÿ
+S	java:S106-"9Replace this use of System.out or System.err by a logger.(ìÚ‹ûÿÿÿÿ
+\
+java:S1075."ARefactor your code to get this URI from a customizable parameter.(èÕ‡ôûÿÿÿÿ
+S	java:S106/"9Replace this use of System.out or System.err by a logger.(©£›–øÿÿÿÿ
+M	java:S1060"9Replace this use of System.out or System.err by a logger.(¦…·f
+N	java:S1061"9Replace this use of System.out or System.err by a logger.(Ò®ºÈ
+S	java:S1062"9Replace this use of System.out or System.err by a logger.(™Ş•ºıÿÿÿÿ
+\
+java:S10757"ARefactor your code to get this URI from a customizable parameter.(º•ŸÔÿÿÿÿÿ
+S	java:S1068"9Replace this use of System.out or System.err by a logger.(À¹ÿÿÿÿÿ
+S	java:S1069"9Replace this use of System.out or System.err by a logger.(Ñ©Ñßøÿÿÿÿ
+S	java:S106:"9Replace this use of System.out or System.err by a logger.(ù«›İıÿÿÿÿ
+W
+java:S1075;"ARefactor your code to get this URI from a customizable parameter.(”ƒæ¨
+S	java:S106<"9Replace this use of System.out or System.err by a logger.(¶ì«¼ÿÿÿÿÿ
+S	java:S106="9Replace this use of System.out or System.err by a logger.(Â‹Äûÿÿÿÿ
+S	java:S106>"9Replace this use of System.out or System.err by a logger.(™èÆşÿÿÿÿ
+S	java:S106E"9Replace this use of System.out or System.err by a logger.(¶ì«¼ÿÿÿÿÿ
+S	java:S106F"9Replace this use of System.out or System.err by a logger.(Â‹Äûÿÿÿÿ
+\
+java:S1075T"ARefactor your code to get this URI from a customizable parameter.(Ëû´ºÿÿÿÿÿ
+N	java:S106V"9Replace this use of System.out or System.err by a logger.(—Ş“
+N	java:S106Y"9Replace this use of System.out or System.err by a logger.(á•ú‘
+V	java:S125\"<This block of commented-out lines of code should be removed.(ÕŠòÌıÿÿÿÿ
+N	java:S106`"9Replace this use of System.out or System.err by a logger.(ÕÜÖ§
+N	java:S106c"9Replace this use of System.out or System.err by a logger.(¿™è‘
+S	java:S106k"9Replace this use of System.out or System.err by a logger.(¯’îñùÿÿÿÿ
+i
+java:S4042k"NUse "java.nio.file.Files#delete" here for better messages on error conditions.(¯’îñùÿÿÿÿ
+S	java:S106t"9Replace this use of System.out or System.err by a logger.(“Ö¥²úÿÿÿÿ
+N	java:S106z"9Replace this use of System.out or System.err by a logger.(‡¤Ÿ”
+W	java:S125…"<This block of commented-out lines of code should be removed.(‘æ¶úıÿÿÿÿ

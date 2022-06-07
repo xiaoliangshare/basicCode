@@ -1,0 +1,19 @@
+
+0
+java:S1220""Move this file to a named package.
+Q
+java:S1854@"6Remove this useless assignment to local variable "it".(Ş‡ßùÿÿÿÿ
+S	java:S1062"9Replace this use of System.out or System.err by a logger.(‡µÚúÿÿÿÿ
+N	java:S1066"9Replace this use of System.out or System.err by a logger.(…Çøü
+N	java:S1067"9Replace this use of System.out or System.err by a logger.(·öÍ
+Q	java:S1257"<This block of commented-out lines of code should be removed.(·öÍ
+S	java:S106;"9Replace this use of System.out or System.err by a logger.(š—°øÿÿÿÿ
+N	java:S106<"9Replace this use of System.out or System.err by a logger.(—Ş“
+S	java:S106C"9Replace this use of System.out or System.err by a logger.(´‹¹öşÿÿÿÿ
+M	java:S106G"9Replace this use of System.out or System.err by a logger.(ìèŞz
+t
+java:S2293S"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÙÚ›õùÿÿÿÿ
+N	java:S106["9Replace this use of System.out or System.err by a logger.(ø€”ö
+S	java:S106g"9Replace this use of System.out or System.err by a logger.(™ö¢úÿÿÿÿ
+B
+java:S1481@"'Remove this unused "it" local variable.(Ş‡ßùÿÿÿÿ

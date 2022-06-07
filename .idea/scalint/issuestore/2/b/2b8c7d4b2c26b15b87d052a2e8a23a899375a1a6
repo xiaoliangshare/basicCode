@@ -1,0 +1,12 @@
+
+b
+java:S2259"FA "NullPointerException" could be thrown; "userList" is nullable here.(¯Å8›¤ª‘0
+W
+java:S1191"5Use classes from the Java API instead of Sun classes.(î»˜ûÿÿÿÿ8‰Ó›ª‘0
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8›¤ª‘0
+T	java:S106"9Replace this use of System.out or System.err by a logger.(¯Å8›¤ª‘0
+0
+java:S1220""Move this file to a named package.
+€
+java:S1128"^Remove this unused import 'com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion'.(î»˜ûÿÿÿÿ8‰Ó›ª‘0
