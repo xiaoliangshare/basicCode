@@ -1,5 +1,7 @@
 package designpattern;
 
+import java.util.HashMap;
+
 /**
  * @description:
  * @author: lianghaohong
@@ -23,6 +25,9 @@ public class testDesign {
         }).start();
         Thread.sleep(100);
         System.out.println("main线程结束");
+
+        HashMap<String, String> map = new HashMap<>();
+        map.put("1","abc");
 
     }
 }

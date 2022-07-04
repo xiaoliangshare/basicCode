@@ -12,6 +12,7 @@
         <module name="Xml" />
         <module name="maven-chat03" />
         <module name="JDBC" />
+        <module name="kafka-Demo" />
         <module name="ACM" />
         <module name="VerifyRule" />
       </profile>
@@ -21,8 +22,9 @@
       <module name="ConstractorDemo" target="8" />
       <module name="Demo" target="8" />
       <module name="JDBC" target="8" />
+      <module name="kafka-Demo" target="1.8" />
       <module name="Maven-chart02" target="8" />
-      <module name="maven-chat03" target="8" />
+      <module name="maven-chat03" target="1.8" />
       <module name="VerifyRule" target="8" />
       <module name="Xml" target="8" />
     </bytecodeTargetLevel>
